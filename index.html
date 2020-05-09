@@ -360,9 +360,11 @@ var nodeColors = [];
 //*******************************************************************************************
 //MAIN FUNCTION
 document.getElementsByTagName("head")[0].getElementsByTagName("title")[0].text=treemapName; //label browser tab
-height = document.getElementById("container").offsetHeight - 160;
-width = 0.80*document.getElementById("container").offsetWidth;
-
+//height = document.getElementById("container").offsetHeight - 160;
+//width = 0.80*document.getElementById("container").offsetWidth;
+height = 1000;
+width = 1800;	
+	
 d3.csv(CSVfileName).then(function(data){ //name of csv file to use
   qcConfigurationData(data);
   let initialGroupingOrder = groupingOrderSet[Object.keys(groupingOrderSet)[0]].slice();
