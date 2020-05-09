@@ -1,0 +1,1288 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<title>TRM Example Treemap</title>
+<style>
+html, body {
+  height: 100%;
+}
+body {
+  font: 12px sans-serif;
+  overflow: hidden;
+}
+svg {
+  width: 100%;
+  height 100%;
+}
+#container{
+  width: 100%;
+  height: 100%;
+}
+#filters{
+  width: 15%;
+  height: 98%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space:nowrap;
+  left-margin: 5px;
+  user-select: none;
+} 
+#chart{
+  width: 85%;
+  height: 100%;
+  margin-top: 5px;
+  user-select: none;
+}
+#draghandle-vert {
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  cursor: ew-resize;
+}
+#draghandle-horiz {
+  height: 3px;
+  width: 100%;
+  background-color: #ccc;
+  cursor: ns-resize;
+}
+#divider {
+  height: 3px;
+  width: 100%;
+  background-color: #ccc;
+
+}
+.filterLabel{
+ padding-left:  10px;
+ font-weight: bold;
+}
+.dropdown-check-list {
+  display: block;
+  padding: 5px;
+  width: 95%;
+}
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block; 
+  padding: 3px 50px 3px 10px;
+  border: 1px solid #ccc;
+}
+.dropdown-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 5px;
+  right: 10px;
+  top: 15%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.dropdown-check-list .anchor:active:after {
+  right: 8px;
+  top: 21%;
+}
+.dropdown-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+.dropdown-check-list ul.items li {
+  list-style: none;
+  overflow: hidden;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.search-check-list {
+  display: block;
+  padding: 5px;
+  background-color: #fff;
+}
+.search-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block; 
+  padding: 8px 0px 8px 0px;
+  border: 0px;
+}
+.search-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.search-check-list .anchor:active:after {
+  right: 10px;
+  top: 20%;
+}
+.search-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+}
+.search-check-list ul.items li {
+  list-style: none;
+  overflow: hidden;
+}
+#node-property-items input {
+  background-color: #fff;
+  border: 0px;
+}
+#node-property-items input:hover {
+  background-color: #ccc;
+}
+#reset-filters {
+  display: block;
+  padding:  10px;
+  padding-top: 10px;
+  cursor: pointer;
+  color: #00f;
+  background-color: #fff;
+}
+#reset-filters:hover {
+  font-weight: bold;
+} 
+#searchBox {
+  width: 150px;
+  border: 1px solid #ccc;
+  padding: 3px 5px 3px 8px;
+}
+#searchReset {
+  display: inline-block; 
+  border: 1px solid #ccc;
+  padding: 3px 5px 3px 5px; 
+  cursor: pointer;
+}
+#searchReset:hover {
+  background-color: #ccc;
+}
+.nodeModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;  
+  background-color: #fff;
+  padding: 0px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  max-height: 75%;
+  overflow-y: auto;
+}
+#close-button {
+  float: right;
+  border: 1px solid #eee;
+  padding: 2px 4px;
+  background-color: #eee;
+  cursor: pointer;
+}
+#close-button:hover {
+  background-color: #ccc;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+}
+.nodeModal td {
+  vertical-align: top;
+}
+.nodeModal tr td:nth-child(2) {
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 600px;
+  word-wrap: break-word;
+}
+.nodeModal td:first-child {
+  font-weight: bold;
+  text-align: right;
+}
+.nodeModal tr:first-child {
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #ccc;
+}
+.nodeModal tr:first-child td {
+  vertical-align: middle;
+  white-space:nowrap;
+}
+.highlight-node {
+  stroke-width: 4;
+}
+input[type="color"]{
+  border: none;
+  outline: none;
+  width: 14px;
+  height: 14px;
+  margin: 4px;
+  padding: 0px;
+}
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#treemap-legend {
+  list-style: none;
+  overflow: hidden;
+  margin: 5px;
+}
+#treemap-legend hr {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+.clear-checkboxes {
+  padding-left: 4px;
+  color: #00f;
+  cursor: pointer;
+}
+.clear-checkboxes:hover {
+  font-weight: bold;
+}
+#go-home {
+  color: #00f;
+  cursor: pointer;
+}
+#go-home:hover {
+  font-weight: bold;
+}
+#export {
+  color: #00f;
+  cursor: pointer;
+}
+#export:hover {
+  font-weight: bold;
+}
+#timeFrameSlider {
+  background-color: #fff;
+  z-index: 10;
+}
+/* Customize Firefox slider */
+input[type=range]::-moz-range-thumb {
+  border-radius: 3px;
+  background: #eee;
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb:hover {
+  background:#ccc;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: #ccc;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+</style>
+
+<body>
+  <div id="nodeModal" class="nodeModal">
+    <div id="modalContent"></div>
+  </div>
+  <div id="container" class="flex-container">
+    <div id="filters" class="flex-container" style="flex-direction: column;"></div>
+	<div id="draghandle-vert" class="flex-container"></div>
+    <div id="chart" class="flex-container" style="flex-direction: column; justify-content: flex-start;">
+	  <div id="selectors" class="flex-container" style="flex-direction: row; justify-content: space-between; align-items: center; order: 1; flex: 0 1 auto">
+	    <div style="height: 20px; margin-top: 2px;"><span id="go-home" >Home</span></div>
+		<div class="flex-container justify-content: right;" > 
+	      <div id="grouping-selector" style="height: 20px; margin-left: 15px;"></div>
+          <div id="node-color-selector" style="height: 20px; margin-left: 15px;"></div>
+          <div id="node-size-selector" style="height: 20px; margin-left: 15px;"></div>
+          <div style="height: 20px; margin-left: 15px; margin-top: 2px;"><span id="export" style="">Export visible nodes</span></div>
+	    </div>
+	  </div>
+	  <div id="divider" class="flex-container" style="order: 2; flex: 0 1 auto;"></div>
+	  <div id="treemap" class="flex-container" style="order: 3; flex: 0 1 auto;" ></div>
+	  <div id="draghandle-horiz" class="flex-container" style="order: 4; flex: 0 1 auto;"></div>
+	  <div id="treemap-legend" class="flex-container" style="flex-direction: row; justify-content: space-between; padding-bottom: 5px; order: 5; flex: 0 1 auto;">
+ 	    <div id="treemap-legend-grouping" style="text-align:center; width=25%; "></div>
+		<div id="treemap-legend-leafnode" style="text-align:center; margin-left: 15px; width=60%;"></div>
+		<div style="text-align: right; width=10%; ">
+		  <ul style="list-style: none; margin-top: 0;">
+		    <li style="color: #bbb;">NGA/TAED</span>
+		    <li style="color: #bbb;">Treemap v01May20</span>
+		  </ul>
+		</div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.js"></script> 
+<script>
+
+//************************************************************************************************************************//
+// CUSTOM SETTINGS FOR DATA (First 7 vars are mandatory)
+var CSVfileName = "CNCFLandscape.csv"  //the name of csv file (including its path relative to the location of the html file)
+var dateOfData = "1 May 2020" //date of the data contained in the CSV file
+var treemapName = "CNCF Treemap"; //the name in the browser tab and also the top level of treemap (if 1st group has more than 1 unique value)
+var groupingOrderSet = {  //the order in which each row of data is grouped
+    "Default": ["Category", "Subcategory", "Name"],
+	"Organization-Product": ["Organization", "Name"],
+	"License-Product": ["License", "Name"]
+	};
+var nodeLabel = "Name"; //the name of the column used to label the leaf node
+var leafNodeSizeValueColumns = ["value"]; //the column name in the CSV file that holds numerical values used to determine the leaf node size
+var multiValueColumns = []; //the columns that have multiple values in a cell separated by the delimiter(below)
+var omitFromFilterColumns = [];//the columns to omit from the filter menu - usually because the text is too long or too many values
+var delimiter = ":"; //the delimiter between multiple values in a cell
+var timeFrameStartColumn = "";
+var timeFrameEndColumn = "";
+
+//var customNodeColors = ["#a9e0e4", "#002060", "#c2d6e8", "#a6a6a6", "#244461"]; //colors in order from leaf to parent (leave blank ("[]")) to autogeneate colors
+var customNodeColors = ["#a9e0e4", "#002060", "#c2d6e8", "#a6a6a6", "#244461", "#000000"]; //colors in order from leaf to parent (leave blank ("[]")) to autogeneate colors
+var fontColors = ["#002060", "#c2d6e8", "#002060", "#fff", "#e5b40b", "#ffffff"]; //colors in order from leaf to parent (leave blank ("[]")) to use all black
+
+var headerFontSize = 10; //font size of header nodes
+var leafFontSize = 6; //font size of leaf nodes
+//************************************************************************************************************************//
+var uniqueValues = {};//unique values for each node property (except omitted ones)
+var leafNodeColor = {}; //an object with properties for each allowable leaf node color
+var searchPropertiesList = []; //node properties to apply search to
+var filters = {}; //list of current property/value pairs used for filtering 
+var nodeColors = [];
+//*******************************************************************************************
+//MAIN FUNCTION
+document.getElementsByTagName("head")[0].getElementsByTagName("title")[0].text=treemapName; //label browser tab
+height = document.getElementById("container").offsetHeight - 160;
+width = 0.80*document.getElementById("container").offsetWidth;
+
+d3.csv(CSVfileName).then(function(data){ //name of csv file to use
+  qcConfigurationData(data);
+  let initialGroupingOrder = groupingOrderSet[Object.keys(groupingOrderSet)[0]].slice();
+  nodeLabel = initialGroupingOrder.pop();
+  setColorScheme(initialGroupingOrder);
+  uniqueValues = createUniqueValuesList(data);
+  buildFilterMenu(initialGroupingOrder);
+  buildLeafNodeSizeSelector();
+  buildNodeColorSelector();
+  buildGroupingSelector();
+  buildGroupingOrderLegend(initialGroupingOrder);
+  var root = createNodeHierarchy(initialGroupingOrder);
+  var treemap = d3.treemap()   //initialize the treemap object
+    .tile(d3.treemapResquarify)    
+    .size([width, height])
+    .round(true)
+    .paddingOuter(2)
+    .paddingTop(16)
+    .paddingInner(2);
+  var svg = d3.select("#treemap").append("svg") //create svg viewport
+    .attr("viewBox", [0, 0, width, height])
+    .style("font", "10px sans-serif");
+  var home = treemap(root);  
+  var group = svg.append("g").call(render, home);//create initial treemap view
+  d3.select("#draghandle-vert").on("mousedown", initResizeX)//add event to filtermenu-treemap divider
+  d3.select("#draghandle-horiz").on("mousedown", initResizeY)//add event to treemap-legend divider
+  d3.select("#go-home").on("click", goHome);//add event to home button
+  d3.select("#export").on("click", exportData);//add event to export button
+  
+//******************************************************************************************* 
+//SUPPORTING FUNCTIONS
+//*******************************************************************************************
+//functions to scale nodes during zooms to size of svg viewport  
+  const x = d3.scaleLinear().rangeRound([0, width]); //scales x values to full range of width
+  const y = d3.scaleLinear().rangeRound([0, height]); //scales y values to full range of height
+//*******************************************************************************************
+  //function to qc configuration settings above against the csv file
+  function qcConfigurationData(data) {
+    let columns = Object.keys(data[0]); //get names of csv columns
+    if (typeof treemapName == 'undefined') {
+      var treeMapName = CSVfileName.split(".")[0];
+    }
+    let groupingOrderSetNames = Object.keys(groupingOrderSet); 
+    if ( groupingOrderSetNames.length == 0){
+      alert("The column names for grouping the nodes (groupingOrderSet) is empty");
+    }
+    for (let name in groupingOrderSetNames){
+	  for (let g in groupingOrderSet[groupingOrderSetNames[name]]){
+        if (!columns.includes(groupingOrderSet[groupingOrderSetNames[name]][g])){
+          alert("A name for the grouping of nodes (groupingOrderSet) does not match the columns in the csv file");
+	    }
+	  }
+    }
+    if(!columns.includes(nodeLabel)) {
+      alert("The name for the node label (nodeLabel) does not match any columns in the csv file");
+    }
+    for (let m in multiValueColumns){
+	  if (!columns.includes(multiValueColumns[m])){
+	    alert("The names of the multiple value columns (multiValueColumns) do not match the columns in the csv file");
+	  }
+    }
+    if (timeFrameStartColumn != ""){
+      if(!columns.includes(timeFrameStartColumn)) {
+        alert("The name for the time frame start column (timeFrameStartColumn) does not match any columns in the csv file");
+	  }
+    }
+    if (timeFrameEndColumn != ""){
+      if(!columns.includes(timeFrameEndColumn)) {
+        alert("The name for the time frame end column (timeFrameStartColumn) does not match any columns in the csv file");
+	  }
+    }
+	for (let l in leafNodeSizeValueColumns){
+	  if (!columns.includes(leafNodeSizeValueColumns[l])){
+	    alert("The names of the leaf node size columns (leafNodeSizeValueColumns) do not match the columns in the csv file");
+	  }
+    }
+  }
+
+//*******************************************************************************************
+  //function to build a list of unique values for each csv column
+  function createUniqueValuesList(data) {
+    let uniqueValues = {};
+    let uniqueValueColumns = Object.keys(data[0])
+	let groupingColumns = Object.values(groupingOrderSet).reduce((a, b) => [...a, ...b], []); //combined list of all columns used to group
+	uniqueValueColumns.forEach(function(columnName) { //create object key for each column (except omitted columns) with null array value
+      if (!omitFromFilterColumns.includes(columnName) || groupingColumns.includes(columnName) || columnName == timeFrameStartColumn || columnName == timeFrameEndColumn){
+	    uniqueValues[columnName] = [];
+	  }
+    });
+    uniqueValueColumns = Object.keys(uniqueValues);
+    for (let j = 0; j < uniqueValueColumns.length; j++) { //step through each column
+	  let columnName = uniqueValueColumns[j];
+      let isANumberColumn = true;
+	  let dataRows = data.length
+      for (let i = 0; i < dataRows; i++){ //step through each row
+	    let cellData = data[i][columnName].replace(/[^\x20-\x7E]/g, '').trim();//clean and trim data (remove non-printable characters)
+        data[i][columnName] = cellData;
+		if (columnName == timeFrameStartColumn || columnName == timeFrameEndColumn){
+		  cellData = reformatDateString(cellData);
+		  data[i][columnName] = cellData;
+		}
+	    if (!uniqueValues[columnName].includes(cellData)){ //add unique value if not already included in uniqueValues list
+	      uniqueValues[columnName].push(cellData);
+		  isANumberColumn = isANumberColumn && !isNaN(cellData); //tracks whether a column's values are all numbers for sorting purposes
+	    }
+      }
+	  if (isANumberColumn){//sort each list of values (numbers separate from text)
+	    uniqueValues[columnName] = uniqueValues[columnName].sort(function(a, b){return a-b});
+	  }else{
+	    uniqueValues[columnName] = uniqueValues[columnName].sort();
+	  }
+    }
+    multiValueColumns.forEach(function(d){ //parse multivalue columns
+      if (!omitFromFilterColumns.includes(d)){
+        let parsedArray = [];
+	    let unparsedArray = uniqueValues[d];
+	    for (let i=0; i < unparsedArray.length; i++){
+          let parsedElement = unparsedArray[i].split(delimiter);
+	      for (let j = 0; j < parsedElement.length; j++){
+	        if (!parsedArray.includes(parsedElement[j].trim())){ //add unique value
+	          parsedArray.push(parsedElement[j].trim());
+	        }
+	      }
+	    }
+        uniqueValues[d] = parsedArray.sort();
+	  }
+    });
+	return uniqueValues;
+  }
+ 
+//******************************************************************************************* 
+//function to create node color property selector (for properties with <20 values)
+  function buildNodeColorSelector() {
+    let filterColumns = Object.keys(data[0]).filter(function(value, index, arr){ return !omitFromFilterColumns.includes(value);})
+    let domString = '<label for="node-color" style="font-weight:bold" >Node color:  </label>';
+    domString += '<select id="node-color" name="node-color" onchange="createNodeColorLegend()">';
+    domString += '<option value="Default color" selected="selected">Default color</option>';
+    for (let i = 0; i < filterColumns.length; i++){ //only include properties with <20 values, not multi-valued, and not omitted from filter menu
+      if (uniqueValues[filterColumns[i]].length <= 20 && !multiValueColumns.includes(filterColumns[i])){  
+        domString += '<option value="'+filterColumns[i]+'">'+filterColumns[i]+'</option>';
+	  }
+    }
+    domString += '</select>'
+    document.getElementById("node-color-selector").innerHTML = domString;
+  }
+//*******************************************************************************************  
+//function to create node size selector (if node size columns were defined)
+  function buildLeafNodeSizeSelector() {
+    if (leafNodeSizeValueColumns.length > 0) {
+      let domString = '<label for="node-size" style="font-weight:bold" >Node size:  </label>';
+      domString += '<select id="node-size" name="node-size" >';
+      domString += '<option value="Same size" selected="selected">Same size</option>';
+      for (let i = 0; i < leafNodeSizeValueColumns.length; i++){
+        domString += '<option value="'+leafNodeSizeValueColumns[i]+'">'+leafNodeSizeValueColumns[i]+'</option>';
+      }
+      domString += '</select>'
+      document.getElementById("node-size-selector").innerHTML = domString;
+      d3.select("#node-size").on("change", changeNodeSize);
+    }
+  }
+//*******************************************************************************************  
+//function to create grouping selector
+  function buildGroupingSelector() {
+    let groupingList = Object.keys(groupingOrderSet);
+    if (groupingList.length > 0) {
+      let domString = '<label for="grouping" style="font-weight:bold" >Grouping:  </label>';
+      domString += '<select id="grouping" name="grouping" >';
+      domString += '<option value="'+groupingList[0]+'" selected="selected">'+groupingList[0]+'</option>';
+      for (let i = 1; i < groupingList.length; i++){
+        domString += '<option value="'+groupingList[i]+'">'+groupingList[i]+'</option>';
+      }
+      domString += '</select>'
+      document.getElementById("grouping-selector").innerHTML = domString;
+      d3.select("#grouping").on("change", changeGrouping);
+    }
+  }
+//*******************************************************************************************  
+//function to add grouping order and default leafnode color legends to chart
+  function buildGroupingOrderLegend(groupingOrder) {
+    let domString = '<span id="treemap-legend-grouping-label" style="font-weight: bold;">Node Grouping Hierarchy</span><hr style="color: #ccc;">';
+	domString += '<div style="text-align:left; column-count: 2; ">'
+	let groupingOrderLength = groupingOrder.length;
+	if (groupingOrderLength == 0){
+      domString += '<li><input type="color" disabled class="grouping-order" id="root" value="' + nodeColors[1] + '" />'
+      domString += '<label for="root">'+ truncate(treemapName) + '</label></li>';
+	} else {
+      for (let g = 0; g < groupingOrderLength; g++){
+        domString += '<li><input type="color" disabled class="grouping-order" id="'+ groupingOrder[g] +'" value="' + nodeColors[groupingOrderLength - g] + '" />'
+	    domString += '<label for="'+ groupingOrder[g] +'">'+ truncate(groupingOrder[g]) + '</label></li>';
+      }
+	}
+	domString += '</div>';
+    document.getElementById("treemap-legend-grouping").innerHTML = domString;
+	
+    domString = '<span id="treemap-legend-leafnode-label" style="font-weight: bold;">Leaf Nodes ('+nodeLabel+')</span><hr style="color: #ccc;" >'
+    domString += '<div  id="treemap-legend-leafnode-list" style="text-align:left; column-count: 5;">'
+	domString += '<li><input type="color" disabled class="grouping-order" id="leafNode" value="'+leafNodeColor["Default color"]+'" />'
+    domString += '<label for="leafNode">Default color</label></li></div>';
+	document.getElementById("treemap-legend-leafnode").innerHTML = domString;
+  }
+//*******************************************************************************************  
+//function to build the node hierarchy from the csv file data
+  function createNodeHierarchy(groupingOrder) {
+    let list, item, parentId, id, name, startingId, gPtr;
+    if (groupingOrder.length == 0 || uniqueValues[groupingOrder[0]].length > 1){//create root node if no grouping order or 1st grouping > 1 unique value
+      startingId = "root";
+      list = [{"parentId": null, "id": startingId, "name": treemapName }];
+	  gPtr = 0;
+    }else{
+      startingId = data[0][groupingOrder[0]].replace(/[().\s]/g,''); //remove any spaces in grouping order name (id's can have spaces in them)
+      list = [{"parentId": null, "id": startingId, "name": data[0][groupingOrder[0]] }]; //root node if first group has only 1 value
+	  gPtr = 1;
+    }
+	
+    let dataRows = data.length;
+	for (let i = 0; i < dataRows; i++){ //step through each row
+      item = data[i]; //treat each row as an item in the list
+	  id = startingId;
+	  if (groupingOrder.length > 0){
+        for (let j = gPtr; j < groupingOrder.length; j++) {
+          parentId = id;
+	      name = item[groupingOrder[j]];
+	      id = name + "-" + parentId;
+		  id = id.replace(/[().\s]/g,'');
+	      list.push({ "parentId": parentId, "id": id, "name": name});
+        }
+	  }
+    item["id"] = i;	//add unique id for the item
+    item["parentId"] = id;
+    item["name"] = item[nodeLabel];
+    list.push(item); //add item to list
+    }
+ 
+    //remove duplicate parent child pairs
+    let jsonObject = list.map(JSON.stringify); 
+    let uniqueSet = new Set(jsonObject); 
+    list = Array.from(uniqueSet).map(JSON.parse); 
+
+    //convert to D3 hierarchy of objects
+    //note: "ambiguous" error means the identified node is related to more than 1 parent node in the csv file (not allowed)
+    let root = d3.stratify()
+      .id(function(d) { return d.id; })
+      .parentId(function(d) { return d.parentId; })
+      (list)
+      .sum(d => d.children ? 0 : 1)
+      .sort((a, b) => b.name - a.name); //sorts leaf nodes by name
+    return(root);
+  }
+//*******************************************************************************************	
+//function to render the treemap  
+  function render(group, root){
+    //create g elements for every node in the root hierarchy
+    const node = group.selectAll("g")
+      .data(d3.nest().key(d => d.height).entries(root.descendants()))
+      .join("g")
+      .selectAll("g")
+      .data(d => d.values)
+      .join("g")
+        .attr("transform", d => `translate(${d.x0},${d.y0})`)
+        .attr("class", "node"); //label g elements as nodes in the hierarchy
+	  
+    //add mouseclick event on every node except the root node
+    node.filter(d => d === root ? d.parent : d.children)
+      .attr("cursor", "pointer")
+      .on("click", d => d === root ? zoomout(root) : zoomin(d));
+
+    //add tooltip text for each node
+    node.append("title") 
+      .text(d => buildToolTipText(d));  
+
+    //add rectangle for each node
+	let propertySelector = document.getElementById("node-color");
+    let colorProperty = propertySelector.options[propertySelector.selectedIndex].value;
+    node.append("rect")
+      .attr("id", function(d) { return d.data.id; })
+	  .attr("fill", d => d.height == 0 ? leafNodeColor[colorProperty] : nodeColors[d.height])
+	  .attr("rx", "3")
+	  .attr("ry", "3")
+	  .attr("stroke", "#bbb")
+	  .attr("width", d => d.x1 - d.x0)
+      .attr("height", d => d.y1 - d.y0);
+
+    //add clippath for each node
+    node.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.data.id; })
+      .append("use")
+      .attr("xlink:href", function(d) { return "#" + d.data.id; });
+
+    //add text label for each tile
+    node.append("text")
+      .attr("clip-path", function(d) { return "url(#clip-" + d.data.id + ")"; })
+	  .attr("fill", d => fontColors[d.height])
+      .selectAll("tspan")
+	  .data(d => (d === root ? d.ancestors().reverse().map(d => d.data.name).join(" \u2192 "): d.data.name).split(/\s+/))
+      .join("tspan")
+	  .text(d => (d == "" ? "(Blank)" : d));
+
+	
+    node.filter(d => d.children).selectAll("tspan") // set text spacing for parent nodes (horizontally)
+      .attr("dx", 3)
+      .attr("y", (13 + 2 * root.depth)); //adjust text placement as font size increases by zoom level
+
+    node.filter(d => !d.children).selectAll("tspan") //set text spacing for leaf nodes (vertically)
+      .attr("x", 3)
+      .attr("y", (d, i, nodes) => `${ 1.1 + i * 1.1}em`);
+
+    node.filter(d => d.children).selectAll("text").attr("font-size", (headerFontSize + 2 * root.depth)+"px")//increase parent node font size when zoomed in
+	node.filter(d => !d.children).selectAll("text").attr("font-size", (leafFontSize + 2 * root.depth)+"px");  //increase leaf node font size when zoomed in
+
+	//enable triggering display of leaf node properties 
+	node.filter(d => !d.children).selectAll("rect").attr("cursor", "pointer").on("click", displayNodeProperties);
+	node.filter(d => !d.children).selectAll("text").attr("cursor", "pointer").on("click", displayNodeProperties);
+	
+	//enable highlighting of nodes when moused over
+	node.selectAll("rect").on("mouseenter", highlightRect).on("mouseleave", unhighlightRect);
+	
+	node.filter(d => d.depth == 0).append("text").attr("fill", d => fontColors[d.height]).text("Date of Data: " + dateOfData)
+	  .attr("text-anchor", "end").attr("x", d => d.x1 - 20).attr("y",13);
+	
+    //apply filters, leaf node colors, and search highlighting to new treemap (if any)
+    let currentFilterProperties = Object.keys(filters);
+    if (currentFilterProperties.length != 0){applyFilters()};
+    searchNodes();	
+
+	function buildToolTipText(d) {
+      let toolTipText = d.data.name;
+	  return toolTipText;
+	}
+  }
+// END OF RENDER FUNCTION
+//*******************************************************************************************
+//functions to zoomin, zoomout and resize nodes
+  function changeNodeSize() {
+    let propertySelector = document.getElementById("node-size");
+    let nodeSizeProperty = propertySelector.options[propertySelector.selectedIndex].value;
+    if (nodeSizeProperty == "Same size"){
+	  root.sum(d => d.children ? 0 : 1)
+	    .sort((a, b) => b.name - a.name);
+	}else{
+      root.sum(d => d[nodeSizeProperty])
+	    .sort((a, b) => b.value - a.value);
+	}
+	treemap(root);
+	let currentNode = d3.select("svg").select("g").select("g").datum().values[0];
+	x.domain([currentNode.x0, currentNode.x1]);
+    y.domain([currentNode.y0, currentNode.y1]);
+	position(group, currentNode);
+  }
+  function position(group, root) {//function to resize and reposition nodes based on zoomin/zoomout
+    group.selectAll("g.node")
+      .attr("transform", d => `translate(${x(d.x0)},${y(d.y0)})`)
+      .select("rect")
+        .attr("width", d => x(d.x1) - x(d.x0))
+        .attr("height", d => y(d.y1) - y(d.y0));
+  }
+  function goHome() {//function to return treemap to the fully zoomed out view	
+    if (d3.selectAll(".node").filter(d => d.depth == 0).size() == 0){
+      zoomin(home);
+    }
+  }
+  function zoomin(d) {//when zooming in, draw the new nodes on top, and fade them in
+    const group0 = group.attr("pointer-events", "none");
+    const group1 = group = svg.append("g").call(render, d);
+    x.domain([d.x0, d.x1]);
+    y.domain([d.y0, d.y1]);
+    svg.transition()
+      .duration(750)
+      .call(t => group0.transition(t).remove()
+        .call(position, d.parent))
+      .call(t => group1.transition(t)
+        .attrTween("opacity", () => d3.interpolate(0, 1))
+        .call(position, d));
+  }
+  function zoomout(d) {//when zooming out, draw the old nodes on top, and fade them out
+    const group0 = group.attr("pointer-events", "none");
+    const group1 = group = svg.insert("g", "*").call(render, d.parent);
+    x.domain([d.parent.x0, d.parent.x1]);
+    y.domain([d.parent.y0, d.parent.y1]);
+    svg.transition()
+      .duration(750)
+      .call(t => group0.transition(t).remove()
+        .attrTween("opacity", () => d3.interpolate(1, 0))
+        .call(position, d))
+      .call(t => group1.transition(t)
+        .call(position, d.parent));
+  }
+//*******************************************************************************************
+//functions to build filter menu elements
+  function buildFilterMenu(groupingOrder){
+    let filterMenu = document.getElementById('filters');
+	filterMenu.innerHTML = '<div class="sticky" >'+buildSearchBox(groupingOrder)+'<span id="reset-filters" onclick = "resetFilters()" >Reset filter(s)</span>';
+	if (timeFrameStartColumn != ""){
+	  filterMenu.innerHTML += buildTimeFrameSlider();
+	}
+	filterMenu.innerHTML +='</div>';
+	let filterColumns = Object.keys(uniqueValues).filter(function(value, index, arr){ return !omitFromFilterColumns.includes(value);})
+	for (let column of filterColumns){ //add picklist for each filter column
+      filterMenu.innerHTML += buildPropertyPicklistMenu(column);
+    }  
+
+    function buildPropertyPicklistMenu (property){
+      let domString = '<span class="filterLabel">' + property + '</span><div id="'+property+'-checklist" class="dropdown-check-list">';
+	  domString += '<span class="anchor" onclick="toggleVisibility(this)" >No filter</span>';
+      domString += '<ul id="' + property + '-items" class="items">';
+      domString += '<li class="clear-checkboxes" onclick="clearCheckboxes(this)" >Clear checkboxes</li>';
+      let propertyValues = uniqueValues[property];
+      for (let pv of propertyValues){
+	    if (pv == ""){
+		  domString += '<li><input type="checkbox" onclick="filterTreeMap(this)" value="' + (property+'<>'+pv)+'"/>(Blanks)</li>';
+        }else{
+          domString += '<li><input type="checkbox" onclick="filterTreeMap(this)" value="' + (property+'<>'+pv)+'"/>'+pv+'</li>';
+        }
+   	  }
+      domString += '</ul></div>';
+	  return domString;
+    }
+
+    function buildSearchBox (groupingOrder){
+      let domString = '<div id="search-checklist" class="search-check-list">';
+	  domString += '<input type="text" id="searchBox" onkeyup="searchNodes()" placeholder="Search..">';
+	  domString += '<span class="anchor" onclick="toggleVisibility(this)" ></span>';
+	  domString += '<input type="reset" id="searchReset" onclick="resetSearch()" value="X" />';
+      domString += '<ul id="search-items" class="items">';
+	  domString += '<li class="clear-checkboxes" onclick="clearCheckboxes(this)" >Clear checkboxes</li>';
+	  let propertyValues = Object.keys(data[0]);
+      for (let pv of propertyValues){
+	    if (pv == ""){
+		  domString += '<li><input type="checkbox" value="'+pv+'" onchange="updateSearchPropertiesList(this)" checked />(Blanks)</li>';
+        }else{
+		  if (groupingOrder.includes(pv)){
+		    domString += '<li><input type="checkbox" value="'+pv+'" onchange="updateSearchPropertiesList(this)" />'+pv+'</li>';
+		  }else{
+            domString += '<li><input type="checkbox" value="'+pv+'" onchange="updateSearchPropertiesList(this)" checked />'+pv+'</li>';
+			searchPropertiesList.push(pv);
+          }
+        }
+   	  }
+      domString += '</ul></div>';
+	  return domString;
+    }
+  }
+//*******************************************************************************************
+//function to display a leaf node's properties 
+  function displayNodeProperties (d) {
+    if (document.getElementById("nodeModal").classList.contains("show-modal")){
+	  toggleNodeProperties();
+	}
+	let domString = '<table id="nodePropertiesTable">';
+	domString += '<tr><td> </td><td>' + d.data[nodeLabel] + '</td>';
+	domString += '<td><span id="close-button" onclick="toggleNodeProperties()">X</span></td></tr>';
+	let columns = Object.keys(d.data).filter(function(value, index, arr){ return !["id", "parentId", "name"].includes(value);})
+	for (let i = 0; i < columns.length; i++){
+      let nodePropertyValue = d.data[columns[i]];
+	  domString += '<tr><td>' + columns[i] + ':</td><td>'
+	  if (multiValueColumns.includes(columns[i]) && nodePropertyValue.split(delimiter).length >= 2){ //add dashes if more than 1 value
+        domString += "- "+nodePropertyValue.replace(new RegExp(delimiter, 'g'), "</br>- ");
+	  }else if (nodePropertyValue.slice(0,4) == "http"){
+	    domString += '<a href="'+nodePropertyValue+'" target="_blank">'+nodePropertyValue+'</a>'
+      } else {
+	    domString += nodePropertyValue;
+	  }
+	  domString +='</td></tr>';
+    }
+	domString += '</table>';
+    document.getElementById("modalContent").innerHTML = domString;
+    toggleNodeProperties();
+	dragElement(document.getElementById("nodeModal"));
+  }
+//*******************************************************************************************
+//function to change the grouping of nodes based on user selection
+  function changeGrouping() {
+    let groupingPropertySelector = document.getElementById("grouping");//get property selected grouping
+    let groupingOrder = groupingOrderSet[groupingPropertySelector.options[groupingPropertySelector.selectedIndex].value].slice();
+	nodeLabel = groupingOrder.pop();
+    setColorScheme(groupingOrder);
+	buildGroupingOrderLegend(groupingOrder);
+	createNodeColorLegend();
+    const group0 = group.attr("pointer-events", "none");
+    root = createNodeHierarchy(groupingOrder);
+    treemap = d3.treemap()   //initialize the treemap object
+      .tile(d3.treemapResquarify)    
+      .size([width, height])
+      .round(true)
+      .paddingOuter(2)
+      .paddingTop(16)
+      .paddingInner(2);
+    home = treemap(root);  
+    const group1 = group = svg.insert("g", "*").call(render, home);
+    if (leafNodeSizeValueColumns.length > 0){
+      let nodeSizePropertySelector = document.getElementById("node-size");
+      let nodeSizeProperty = nodeSizePropertySelector.options[nodeSizePropertySelector.selectedIndex].value;
+      if (nodeSizeProperty != "Same size"){
+	    changeNodeSize();
+	  }
+	}
+    svg.transition()
+      .duration(750)
+      .call(t => group0.transition(t).remove()
+        .attrTween("opacity", () => d3.interpolate(1, 0)))
+      .call(t => group1.transition(t));
+  }
+ //******************************************************************************************* 
+//END OF MAIN FUNCTION
+//}).catch(function(error){
+//    alert("Error - Check configuration settings");
+});
+//*******************************************************************************************
+//GLOBAL FUNCTIONS
+//*******************************************************************************************
+//functions to create and manage the filter menu
+function toggleVisibility(element) {//functions to toggle display of filter picklists
+  let items = element.parentElement.getElementsByTagName("ul")[0];
+  if (items.classList.contains('visible')){
+    items.classList.remove('visible');
+    items.style.display = "none";
+  } else {
+    items.classList.add('visible');
+    items.style.display = "block";
+  }
+}
+function filterTreeMap(element){//function to filter treemap using filters list after any checkbox change   
+  let checkboxValue = {"key": element.value.split('<>')[0], "value": element.value.split('<>')[1]};
+  updateFilters(checkboxValue);
+  applyFilters();
+}
+function applyFilters(){//function to apply filters to treemap leaf nodes
+  let allLeaves = d3.selectAll(".node").filter(d => !d.children);
+  allLeaves.select('rect').style("visibility", "hidden"); //hide all leaf node rectangles
+  allLeaves.select('text').style("visibility", "hidden");  //hide all leaf node text
+  let filteredLeaves = allLeaves.filter(d => filterLeaf(d));
+  filteredLeaves.select('rect').style("visibility", "visible");
+  filteredLeaves.select('text').style("visibility", "visible");
+}
+function updateFilters(item){//function to update filters list based on any change to filter menu
+  let currentFilterProperties = Object.keys(filters);
+  if (currentFilterProperties.length != 0){ //filter items already exist
+    if (currentFilterProperties.includes(item.key)){ //check if there is already a key
+      if(filters[item.key].includes(item.value)){ //check if item value is already included and remove value if true
+        filters[item.key].splice(filters[item.key].indexOf(item.value),1);
+        if (filters[item.key].length == 0){
+          delete filters[item.key]; //remove key if no values
+		  document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "No Filter"
+        } 		
+      }else{ //value not included but key exists
+        filters[item.key].push(item.value); //add value
+      }
+    }else{ //key does not yet exist
+      filters[item.key] = [item.value]; //add first value
+	  document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "Filter Applied"
+    }
+  }else{
+    filters[item.key] = [item.value]; //Add first item to filters
+	document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "Filter Applied"
+  }
+}
+function filterLeaf(leaf) {//function to assess (T/F) whether a leaf node matches all filter list properties
+  let currentFilterProperties = Object.keys(filters);
+  let flag = true;
+  if (currentFilterProperties.length == 0){
+    flag = true;
+  }else{
+    currentFilterProperties.forEach(function(property){
+	  if (multiValueColumns.includes(property)){//test multi-value attribute
+	    let flag2 = false;
+	    for (let i = 0; i < filters[property].length; i++){
+		  if (filters[property][i] == ""){
+		    flag2 = flag2 || (leaf["data"][property] == "");
+		  }else{
+		    flag2 = flag2 || leaf["data"][property].includes(filters[property][i]);
+		  }
+		}
+		flag = flag && flag2;
+	  }else if (property == "timeFrame"){ //timeframe 
+        let timeFrame = filters["timeFrame"];
+	    let endDate = ((leaf["data"][timeFrameEndColumn] == "") ? timeFrame:leaf["data"][timeFrameEndColumn]).slice(0,7);
+	    let startDate = leaf["data"][timeFrameStartColumn].slice(0,7);
+	    flag = flag && (timeFrame >= startDate && timeFrame <= endDate);
+	  }else { //test single value attribute 
+        if (!(filters[property].includes(leaf["data"][property]))){
+	      flag = flag && false;
+	    }
+	  }
+	});
+  }
+  return flag;
+}
+function resetFilters(){//function to reset all filters
+  delete filters["timeFrame"];
+  let appliedFilters = Object.keys(filters);
+  for (let af in appliedFilters){//clear all filter dropdowns and checkboxes
+    let dropDown = document.getElementById(appliedFilters[af]+"-checklist").getElementsByTagName('span')[0];
+	toggleVisibility(dropDown);
+	dropDown.innerText = "No Filter";
+    let checkBoxList = document.getElementById(appliedFilters[af]+"-items").getElementsByTagName("input");
+    for (let cb in checkBoxList){
+      checkBoxList[cb]["checked"] = false;
+    }	  
+  }
+  filters = {};
+  d3.selectAll(".node").filter(d => !d.children).select('rect').style("visibility", "visible"); //unhide leaf node rectangle
+  d3.selectAll(".node").filter(d => !d.children).select('text').style("visibility", "visible");  //unhide leaf node text
+  if (timeFrameStartColumn != ""){
+    document.getElementById("timeFrameCheckbox").checked = false; //clear time frame filter
+    document.getElementById("sliderValue").innerText = "No filter";
+    document.getElementById("timeFrameSlider").value = 0;
+  }
+}
+function clearCheckboxes(element) {//function to clear search and filter checkboxes
+  let checkboxes = element.parentNode.getElementsByTagName("input");
+  if (element.parentNode.id == "search-items"){
+    searchPropertiesList = [];
+	searchNodes();
+    for (let i = 0; i < checkboxes.length; i++){
+      checkboxes[i]["checked"] = false;
+    }
+  }else{
+    for (let i = 0; i < checkboxes.length; i++){
+	  if (checkboxes[i]["checked"]){
+	    filterTreeMap(checkboxes[i]);
+        checkboxes[i]["checked"] = false;
+      }
+    }
+  }
+}
+function clearCheckboxes(element) {//function to allow user to clear a filter or search checkbox of checks
+  let checkboxes = element.parentNode.getElementsByTagName("input");
+  if (element.parentNode.id == "search-items"){
+    searchPropertiesList = [];
+	searchNodes();
+    for (let i = 0; i < checkboxes.length; i++){
+      checkboxes[i]["checked"] = false;
+    }
+  }else{
+    for (let i = 0; i < checkboxes.length; i++){
+	  if (checkboxes[i]["checked"]){
+	    filterTreeMap(checkboxes[i]);
+        checkboxes[i]["checked"] = false;
+      }
+    }
+  }
+}
+//*******************************************************************************************
+//functions to search and highlight nodes
+function searchNodes() {
+  let searchElement = document.getElementById("searchBox");
+  if (searchElement != null){
+    let searchTerm = searchElement.value.toLowerCase();
+    if (searchTerm != ""){
+      updateLeafNodeColors();
+	  let leafNodeMatches = d3.selectAll(".node").filter(d => !d.children).filter(function(d){
+	    for (let i = 0; i < searchPropertiesList.length; i++){
+          if (d.data[searchPropertiesList[i]].toLowerCase().includes(searchTerm)){return true}
+        }
+        return false;
+	  });
+      leafNodeMatches.select('rect').attr("fill", "#ffff00");
+    }else{
+      updateLeafNodeColors();
+	}
+  }
+}
+function resetSearch(){
+  document.getElementById("searchBox").value = "";
+  updateLeafNodeColors();
+}
+function updateSearchPropertiesList (element) {
+  let checkboxValue = element.value;
+  if (searchPropertiesList.includes(checkboxValue)) {
+    searchPropertiesList.splice(searchPropertiesList.indexOf(checkboxValue),1);
+  }else{
+    searchPropertiesList.push(checkboxValue);
+  }
+  let searchElement = document.getElementById("searchBox");
+  if (searchElement != null){
+    let searchTerm = searchElement.value.toLowerCase();
+    if (searchTerm != ""){searchNodes();} //rerun search after list update if not blank
+  }
+}
+//*******************************************************************************************
+//functions to highlight a node as the cursor passes over it 
+function unhighlightRect(d, i) {
+  d3.select(this)
+    .attr("stroke-width", 1)
+	.attr("stroke", "#bbb");
+}
+function highlightRect(d, i) {
+  d3.select(this)
+    .attr("stroke-width", 2)
+	.attr("stroke", "#ffff00");
+}
+//*******************************************************************************************
+//functions to create the leaf node color legend and leaf node color array and update leaf node colors 
+function createNodeColorLegend() {
+  leafNodeColor = {"Default color": leafNodeColor["Default color"]};
+  let propertySelector = document.getElementById("node-color");//get property selected for node colors
+  let colorProperty = propertySelector.options[propertySelector.selectedIndex].value;
+  let domString = "";
+  if (colorProperty != "Default color"){
+    let pv = uniqueValues[colorProperty];
+    //let colorSet = d3.schemePastel1;
+    let colorSet = ["#92c7ed", "#ffbb80", "#9be49b", "#eb9393", "#d9cae8", "#dbc2bd", "#f6d5ec", "#e6e6e6", 
+	  "#f7f7d4", "#e8fafc", "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+	if (leafNodeSizeValueColumns.includes(colorProperty)){
+	  colorSet = d3.schemeRdYlGn[pv.length]; //use a heatmap range of red-yellow-green for numerical values
+	}
+    for (let i = 0; i < pv.length; i++){
+      if (pv[i] != ""){
+        domString += '<li><input type="color" id="'+pv[i]+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pv[i]+'">'+ truncate(pv[i]) + '</label></li>';
+	  }else{
+	    domString += '<li><input type="color" id="'+pv[i]+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pv[i]+'">(Blanks)</label></li>';
+	  }
+	  leafNodeColor[pv[i]] = colorSet[i]; //build leafNodeColor array used to color each leaf node
+	}
+	document.getElementById("treemap-legend-leafnode-label").innerHTML = "Leaf Nodes ("+nodeLabel+": "+colorProperty+")";
+	document.getElementById("treemap-legend-leafnode-list").innerHTML = domString;
+  }else{
+    domString = '<span id="treemap-legend-leafnode-label" style="font-weight: bold;">Leaf Nodes ('+nodeLabel+')</span><hr style="color: #ccc;" >'
+    domString += '<div  id="treemap-legend-leafnode-list" style="text-align:left; column-count: 5;">'
+	domString += '<li><input type="color" disabled class="grouping-order" id="leafNode" value="'+leafNodeColor["Default color"]+'" />'
+    domString += '<label for="leafNode">Default color</label></li></div>';
+	document.getElementById("treemap-legend-leafnode").innerHTML = domString;
+  }
+  updateLeafNodeColors();
+}
+function updateLeafNodeColors(){
+  let propertySelector = document.getElementById("node-color");
+  let colorProperty = propertySelector.options[propertySelector.selectedIndex].value;
+  if (colorProperty != "Default color"){
+    d3.selectAll("rect").filter(d => !d.children).attr("fill", d => leafNodeColor[d.data[colorProperty]]);
+  }else{
+	d3.selectAll("rect").filter(d => !d.children).attr("fill", leafNodeColor["Default color"]);
+  }
+}
+function changeLeafNodeColor(element){
+  leafNodeColor[element.id] = element.value; //update color values 
+  document.getElementById("searchBox").value = ""; //reset search
+  updateLeafNodeColors(); 
+}
+//*******************************************************************************************
+//functions to toggle display and drag the node properties modal
+function toggleNodeProperties () {
+  document.getElementById("nodeModal").classList.toggle("show-modal");
+}
+//*******************************************************************************************
+//functions to allow the node properties modal to be dragged
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id)) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+//*******************************************************************************************
+//functions to adjust width of filters menu
+function initResizeX(e) {
+  window.addEventListener('mousemove', resizeX, false);
+  window.addEventListener('mouseup', stopResizeX, false);
+}
+function resizeX(e) {
+  let mouseLocationX = e.clientX;
+  let filterWidth = 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth + '%';
+  let chartWidth = (100 - 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth) + '%';  
+  document.getElementById("filters").style.width = filterWidth;
+  document.getElementById("chart").style.width = chartWidth;
+}
+function stopResizeX(e) {
+  window.removeEventListener('mousemove', resizeX, false);
+  window.removeEventListener('mouseup', stopResizeX, false);
+}
+function initResizeY(e) {
+  window.addEventListener('mousemove', resizeY, false);
+  window.addEventListener('mouseup', stopResizeY, false);
+}
+function resizeY(e) {
+  let mouseLocationY = e.clientY;
+  let chartHeight = 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight + '%';  
+  let legendHeight = (100 - 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight) + '%';
+  document.getElementById("treemap").style.height = chartHeight;
+}
+function stopResizeY(e) {
+  window.removeEventListener('mousemove', resizeY, false);
+  window.removeEventListener('mouseup', stopResizeY, false);
+}
+//*******************************************************************************************
+//functions to export data about the visible leaf nodes
+function exportData() {
+  let allLeaves = d3.selectAll(".node").filter(d => !d.children);
+  let filteredLeaves = allLeaves.filter(d => filterLeaf(d));
+  let exportObject = [];
+  filteredLeaves.each(function(d) {
+    let item = d.data;
+	delete item["id"];
+	delete item["parentId"];
+	delete item["name"];
+    exportObject.push(d.data);
+  });
+  exportString = d3.csvFormat(exportObject);
+  let fileName = CSVfileName.split(".")[0] + "_extract.csv";
+  download(fileName, exportString);  
+}
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+//*******************************************************************************************
+//functions to build and manage the time filter
+function buildTimeFrameSlider() {
+ let domString = '<div style="background-color: #fff;"><input type="checkbox" id="timeFrameCheckbox" value="filtertime" onchange="toggleTimeFrameFilter()" />'
+ domString += '<span style="font-weight: bold;" >Timeframe (<span id="sliderValue">No filter</span>)</span></div>';
+ let today = new Date();
+ let currentYear = today.getFullYear();
+ let currentMonth = today.getMonth() + 1; 
+ let maxDate = uniqueValues[timeFrameEndColumn].slice(-1)[0];
+ let maxYear = maxDate.slice(0,4);
+ let maxMonth = maxDate.slice(5,7);
+ let maxSteps = 12*(maxYear - currentYear) + (maxMonth - currentMonth);
+ domString += '<div style="background-color: #fff;"><input type = "range" id="timeFrameSlider" min="0" max="'+maxSteps+'" step="1" value = "0" oninput="updateTimeFrameSliderValue()" onchange="updateTimeFrameFilter()" /></div>';
+ return domString;
+}
+function updateTimeFrameSliderValue() {
+  let sliderValue = document.getElementById("timeFrameSlider").value;
+  let today = new Date();
+  let currentYear = today.getFullYear();
+  let currentMonth = today.getMonth() + 1; 
+  let filterYear = currentYear + Math.trunc(sliderValue/12);
+  let filterMonth = (currentMonth + (sliderValue % 12));
+  if (filterMonth > 12){
+    filterYear += 1;
+	filterMonth = filterMonth - 12;
+  }
+  document.getElementById("sliderValue").innerHTML = filterYear + "-" + filterMonth.toString().padStart(2, '0');
+  document.getElementById("timeFrameCheckbox").checked = true;
+}
+function toggleTimeFrameFilter() {
+  if (document.getElementById("timeFrameCheckbox").checked){ //box is check - apply time filter
+    updateTimeFrameSliderValue();
+    filters["timeFrame"] = document.getElementById("sliderValue").innerText;
+    applyFilters();
+  }else { //box is unchecked - remove time filter
+    delete filters["timeFrame"];
+	document.getElementById("sliderValue").innerText = "No filter";
+    applyFilters();
+  }
+}
+function updateTimeFrameFilter() {
+  filters["timeFrame"] = document.getElementById("sliderValue").innerText; //add timeframe filter value to filters array
+  applyFilters(); //reapply updated filters array
+}
+//*******************************************************************************************  
+//function to set starting node and font colors 
+function setColorScheme(groupingOrder) {
+  let groupingLevels = groupingOrder.length;
+  if (customNodeColors.length == 0 || customNodeColors.length <= groupingLevels) {
+    nodeColors = d3.schemeBlues[groupingLevels + 2].slice(); //use D3 color scheme
+  } else {
+    nodeColors = customNodeColors.slice();
+  }
+  leafNodeColor["Default color"] = nodeColors[0];
+  if (fontColors.length == 0 || fontColors.length <= groupingLevels) {
+    fontColors = fontColors.concat(["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"]);//black
+  }
+}
+//*******************************************************************************************
+function truncate(input) {
+   if (input.length > 25)
+      return input.substring(0,22) + '...';
+   else
+      return input;
+};
+//*******************************************************************************************
+function reformatDateString(s) {
+  if (s == ""){
+    return s
+  }
+//  let b = s.split('/').reverse();
+  let b = s.split(" ")[0].split('/').reverse();
+  if (b.length == 3){
+    return b[0].padStart(4,"20") + "-" + b[1].padStart(2, "0") + "-" + b[1].padStart(2, "0");
+  } else if (b.length == 2){
+      return b[0].padStart(4,"20") + "-" + b[1].padStart(2, "0");
+  } else {
+    return b[0].padStart(4,"20")
+  }
+}
+</script>  
+</body>
+</html>

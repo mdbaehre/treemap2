@@ -1,0 +1,808 @@
+Category,Subcategory,Organization,Name,License,value
+App Definition and Development,Application Definition & Image Build,Apache Software Foundation ,ServiceComb,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Chef Software ,Chef Habitat,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Cloud Foundry Foundation ,Open Service Broker API,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Cloud Native Computing Foundation (CNCF) ,Buildpacks,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Cloud Native Computing Foundation (CNCF) ,Helm,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Cloud Native Computing Foundation (CNCF) ,KubeVirt,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Cloud Native Computing Foundation (CNCF) ,Telepresence,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,D2iQ ,KUDO,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,DeployHub ,DeployHub,NotOpenSource,1
+App Definition and Development,Application Definition & Image Build,DevSpace ,DevSpace,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Docker ,Docker Compose,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Google ,kaniko,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Google ,Skaffold,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,HashiCorp ,Packer,Mozilla Public License 2.0,1
+App Definition and Development,Application Definition & Image Build,Mirantis ,Mirantis Virtlet,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Okteto ,Okteto,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,On-Prem ,On-Prem,NotOpenSource,1
+App Definition and Development,Application Definition & Image Build,Open API Initiative ,OpenAPI,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Red Hat ,Operator Framework,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Red Hat ,Podman,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Replicated ,Ship,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Solo.io ,Squash,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,VMware ,Bitnami Stacksmith,NotOpenSource,1
+App Definition and Development,Application Definition & Image Build,VMware ,Octant,Apache License 2.0,1
+App Definition and Development,Application Definition & Image Build,Windmill Engineering ,Tilt,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Amazon Web Services ,AWS CodePipeline,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Appveyor Systems ,Appveyor,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Atlassian ,Bamboo,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Buildkite ,Buildkite,MIT License,1
+App Definition and Development,Continuous Integration & Delivery,CircleCI ,CircleCI,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Cloud 66 ,Cloud 66 Skycap,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Cloud Native Computing Foundation (CNCF) ,Brigade,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Cloud Native Computing Foundation (CNCF) ,Flux,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,CloudBees ,Cloudbees Codeship,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Codefresh ,Codefresh,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Continuous Delivery Foundation (CDF) ,Jenkins,MIT License,1
+App Definition and Development,Continuous Integration & Delivery,Continuous Delivery Foundation (CDF) ,JenkinsX,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Continuous Delivery Foundation (CDF) ,Screwdriver,Other,1
+App Definition and Development,Continuous Integration & Delivery,Continuous Delivery Foundation (CDF) ,Spinnaker,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Continuous Delivery Foundation (CDF) ,Tekton Pipelines,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Drone.io ,Drone,Other,1
+App Definition and Development,Continuous Integration & Delivery,Dynatrace ,Keptn,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,GitHub ,GitHub Actions,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,GitLab ,GitLab,Other,1
+App Definition and Development,Continuous Integration & Delivery,Google ,Google Cloud Build,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Harness ,Harness.io,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,HyScale ,HyScale,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Intuit ,Argo,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,JetBrains ,TeamCity,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Microsoft ,Azure Pipelines,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Octopus Deploy ,Octopus Deploy,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,SemaphoreCI ,Semaphore,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Shippable ,Shippable,NotOpenSource,1
+App Definition and Development,Continuous Integration & Delivery,Sorint.Lab ,Agola,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Thoughtworks ,GoCD,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Travis CI ,Travis CI,MIT License,1
+App Definition and Development,Continuous Integration & Delivery,VMware ,Concourse,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,Weaveworks ,Weave Flagger,Apache License 2.0,1
+App Definition and Development,Continuous Integration & Delivery,XebiaLabs ,XL Deploy,NotOpenSource,1
+App Definition and Development,Database,Ant Financial ,Seata,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,Apache CarbonData,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,Apache Hadoop,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,Apache Ignite,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,Cassandra,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,Druid,Apache License 2.0,1
+App Definition and Development,Database,Apache Software Foundation ,ShardingSphere,Apache License 2.0,1
+App Definition and Development,Database,Apple ,FoundationDB,Apache License 2.0,1
+App Definition and Development,Database,ArangoDB ,ArangoDB,Apache License 2.0,1
+App Definition and Development,Database,BigchainDB ,BigchainDB,Apache License 2.0,1
+App Definition and Development,Database,Cloud Native Computing Foundation (CNCF) ,TiKV,Apache License 2.0,1
+App Definition and Development,Database,Cloud Native Computing Foundation (CNCF) ,Vitess,Apache License 2.0,1
+App Definition and Development,Database,Cockroach Labs ,CockroachDB,NotOpenSource,1
+App Definition and Development,Database,Couchbase ,Couchbase,Apache License 2.0,1
+App Definition and Development,Database,Crate.io ,Crate.io,Apache License 2.0,1
+App Definition and Development,Database,Dgraph Labs ,Dgraph,Other,1
+App Definition and Development,Database,Hazelcast ,Hazelcast IMDG,Apache License 2.0,1
+App Definition and Development,Database,IBM ,IBM Db2,NotOpenSource,1
+App Definition and Development,Database,Iguazio ,iguazio,NotOpenSource,1
+App Definition and Development,Database,Intersystems ,InterSystems IRIS Data Platform,NotOpenSource,1
+App Definition and Development,Database,JUXT ,Crux,Other,1
+App Definition and Development,Database,Linux Foundation ,RethinkDB,Apache License 2.0,1
+App Definition and Development,Database,MariaDB Corporation ,MariaDB,GNU General Public License v2.0,1
+App Definition and Development,Database,MemSQL ,MemSQL,NotOpenSource,1
+App Definition and Development,Database,Microsoft ,Microsoft SQL Server,NotOpenSource,1
+App Definition and Development,Database,MongoDB ,MongoDB,NotOpenSource,1
+App Definition and Development,Database,Neo4j ,Neo4j,Unknown License,1
+App Definition and Development,Database,NuoDB ,NuoDB,NotOpenSource,1
+App Definition and Development,Database,Oracle ,MySQL,Other,1
+App Definition and Development,Database,Oracle ,Oracle Database,NotOpenSource,1
+App Definition and Development,Database,Percona ,Percona Server for MySQL,Other,1
+App Definition and Development,Database,Pilosa ,Pilosa,Apache License 2.0,1
+App Definition and Development,Database,PingCAP ,TiDB,Apache License 2.0,1
+App Definition and Development,Database,PostgreSQL ,PostgreSQL,Other,1
+App Definition and Development,Database,Presto Foundation ,Presto,Apache License 2.0,1
+App Definition and Development,Database,Qubole ,Qubole,NotOpenSource,1
+App Definition and Development,Database,Red Hat ,Infinispan,Apache License 2.0,1
+App Definition and Development,Database,Redis Labs ,Redis,"BSD 3-Clause ""New"" or ""Revised"" License",1
+App Definition and Development,Database,Salesforce ,NomsDB,Apache License 2.0,1
+App Definition and Development,Database,SAP ,OrientDB,Apache License 2.0,1
+App Definition and Development,Database,ScyllaDB ,Scylla,GNU Affero General Public License v3.0,1
+App Definition and Development,Database,Snowflake ,Snowflake,NotOpenSource,1
+App Definition and Development,Database,Software AG ,Software AG,NotOpenSource,1
+App Definition and Development,Database,Sorint.Lab ,Stolon,Apache License 2.0,1
+App Definition and Development,Database,Taos Data ,TDengine,GNU Affero General Public License v3.0,1
+App Definition and Development,Database,Vertica Systems ,Vertica,NotOpenSource,1
+App Definition and Development,Database,Yugabyte ,YugaByte DB,Other,1
+App Definition and Development,Streaming & Messaging,Amazon Web Services ,Amazon Kinesis,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Apache Heron,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Apache NiFi,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Apache RocketMQ,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Apache Spark,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Apache Storm,Other,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Beam,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Flink,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Kafka,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Apache Software Foundation ,Pulsar,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Cloud Native Computing Foundation (CNCF) ,CloudEvents,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Cloud Native Computing Foundation (CNCF) ,NATS,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Cloud Native Computing Foundation (CNCF) ,Strimzi,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,deepstreamHub ,deepstream,MIT License,1
+App Definition and Development,Streaming & Messaging,Dell ,Pravega,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,EMQ Technologies ,EMQ Technologies,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Google ,Google Cloud Dataflow,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,Hazelcast ,Hazelcast Jet,Other,1
+App Definition and Development,Streaming & Messaging,KubeMQ ,KubeMQ,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,Lightbend ,Lightbend,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,Linux Foundation ,OpenMessaging,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Microsoft ,Azure Event Hubs,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,Pachyderm ,Pachyderm,Other,1
+App Definition and Development,Streaming & Messaging,Rabbit Technologies ,RabbitMQ,Other,1
+App Definition and Development,Streaming & Messaging,StreamSets ,StreamSets,Apache License 2.0,1
+App Definition and Development,Streaming & Messaging,Talend ,Talend Data Streams,NotOpenSource,1
+App Definition and Development,Streaming & Messaging,WSO2 ,Siddhi,Apache License 2.0,1
+Observability and Analysis,Chaos Engineering,Alibaba Cloud ,Chaosblade,Apache License 2.0,1
+Observability and Analysis,Chaos Engineering,Bloomberg ,PowerfulSeal,Apache License 2.0,1
+Observability and Analysis,Chaos Engineering,ChaosIQ ,Chaos Toolkit,Apache License 2.0,1
+Observability and Analysis,Chaos Engineering,chaoskube ,chaoskube,MIT License,1
+Observability and Analysis,Chaos Engineering,Gremlin ,Gremlin,NotOpenSource,1
+Observability and Analysis,Chaos Engineering,MayaData ,Litmus,Apache License 2.0,1
+Observability and Analysis,Chaos Engineering,PingCAP ,Chaos Mesh,Apache License 2.0,1
+Observability and Analysis,Logging,Alibaba Cloud ,Alibaba Cloud Log Service,NotOpenSource,1
+Observability and Analysis,Logging,Cloud Native Computing Foundation (CNCF) ,Fluentd,Apache License 2.0,1
+Observability and Analysis,Logging,Elastic ,Elastic,Other,1
+Observability and Analysis,Logging,Elastic ,Logstash,Other,1
+Observability and Analysis,Logging,Grafana Labs ,Grafana Loki,Apache License 2.0,1
+Observability and Analysis,Logging,Graylog ,Graylog,GNU General Public License v3.0,1
+Observability and Analysis,Logging,Humio ,Humio,NotOpenSource,1
+Observability and Analysis,Logging,LogDNA ,LogDNA,NotOpenSource,1
+Observability and Analysis,Logging,Loggly ,Loggly,NotOpenSource,1
+Observability and Analysis,Logging,Logz.io ,Logz.io,NotOpenSource,1
+Observability and Analysis,Logging,Loom Systems ,Loom Systems,NotOpenSource,1
+Observability and Analysis,Logging,Rizhiyi ,Rizhiyi,NotOpenSource,1
+Observability and Analysis,Logging,Scalyr ,Scalyr,NotOpenSource,1
+Observability and Analysis,Logging,Sematext ,Sematext,NotOpenSource,1
+Observability and Analysis,Logging,Splunk ,Splunk,NotOpenSource,1
+Observability and Analysis,Logging,Sumo Logic ,Sumo Logic,NotOpenSource,1
+Observability and Analysis,Monitoring,Alibaba Cloud ,Application High Availability Service,NotOpenSource,1
+Observability and Analysis,Monitoring,Amazon Web Services ,Amazon CloudWatch,NotOpenSource,1
+Observability and Analysis,Monitoring,AppDynamics ,AppDynamics,NotOpenSource,1
+Observability and Analysis,Monitoring,AppNeta ,AppNeta,NotOpenSource,1
+Observability and Analysis,Monitoring,Blue Matador ,Blue Matador,NotOpenSource,1
+Observability and Analysis,Monitoring,Catchpoint ,Catchpoint,NotOpenSource,1
+Observability and Analysis,Monitoring,Centreon ,Centreon,GNU General Public License v2.0,1
+Observability and Analysis,Monitoring,Circonus ,IronDB,NotOpenSource,1
+Observability and Analysis,Monitoring,Cloud Native Computing Foundation (CNCF) ,Cortex,Apache License 2.0,1
+Observability and Analysis,Monitoring,Cloud Native Computing Foundation (CNCF) ,OpenMetrics,Apache License 2.0,1
+Observability and Analysis,Monitoring,Cloud Native Computing Foundation (CNCF) ,Prometheus,Apache License 2.0,1
+Observability and Analysis,Monitoring,Cloud Native Computing Foundation (CNCF) ,Thanos,Apache License 2.0,1
+Observability and Analysis,Monitoring,CloudHealth Technologies ,CloudHealth Technologies,NotOpenSource,1
+Observability and Analysis,Monitoring,Comcast ,Trickster,Apache License 2.0,1
+Observability and Analysis,Monitoring,Datadog ,Datadog,NotOpenSource,1
+Observability and Analysis,Monitoring,Dynatrace ,Dynatrace,NotOpenSource,1
+Observability and Analysis,Monitoring,Elastic ,Beats,Other,1
+Observability and Analysis,Monitoring,Epsagon ,Epsagon,NotOpenSource,1
+Observability and Analysis,Monitoring,Google ,Google Stackdriver,NotOpenSource,1
+Observability and Analysis,Monitoring,Grafana Labs ,Grafana,Apache License 2.0,1
+Observability and Analysis,Monitoring,Graphite ,Graphite,Apache License 2.0,1
+Observability and Analysis,Monitoring,Hatena ,Mackerel,NotOpenSource,1
+Observability and Analysis,Monitoring,Honeybadger ,Honeybadger,NotOpenSource,1
+Observability and Analysis,Monitoring,Icinga ,Icinga,GNU General Public License v2.0,1
+Observability and Analysis,Monitoring,InfluxData ,InfluxData,MIT License,1
+Observability and Analysis,Monitoring,Instana ,Instana,NotOpenSource,1
+Observability and Analysis,Monitoring,LogicMonitor ,LogicMonitor,NotOpenSource,1
+Observability and Analysis,Monitoring,ManageEngine ,Applications Manager,NotOpenSource,1
+Observability and Analysis,Monitoring,Microsoft ,Azure Monitor,NotOpenSource,1
+Observability and Analysis,Monitoring,Nagios ,Nagios,GNU General Public License v2.0,1
+Observability and Analysis,Monitoring,Netdata ,Netdata,GNU General Public License v3.0,1
+Observability and Analysis,Monitoring,New Relic ,New Relic,NotOpenSource,1
+Observability and Analysis,Monitoring,NexCloud ,NexClipper,Apache License 2.0,1
+Observability and Analysis,Monitoring,NodeSource ,NodeSource,NotOpenSource,1
+Observability and Analysis,Monitoring,OpenTSDB ,OpenTSDB,GNU Lesser General Public License v2.1,1
+Observability and Analysis,Monitoring,OverOps ,OverOps,NotOpenSource,1
+Observability and Analysis,Monitoring,Red Hat ,Kiali,Apache License 2.0,1
+Observability and Analysis,Monitoring,Replex ,Replex,NotOpenSource,1
+Observability and Analysis,Monitoring,Riverbed Technology ,Aternity,NotOpenSource,1
+Observability and Analysis,Monitoring,Rookout ,Rookout,NotOpenSource,1
+Observability and Analysis,Monitoring,Sensu ,Sensu,MIT License,1
+Observability and Analysis,Monitoring,Sentry ,Sentry,NotOpenSource,1
+Observability and Analysis,Monitoring,SolarWinds ,AppOptics,NotOpenSource,1
+Observability and Analysis,Monitoring,Splunk ,SignalFX,NotOpenSource,1
+Observability and Analysis,Monitoring,StackState ,StackState,NotOpenSource,1
+Observability and Analysis,Monitoring,StormForger ,StormForger,NotOpenSource,1
+Observability and Analysis,Monitoring,Sysdig ,sysdig,Apache License 2.0,1
+Observability and Analysis,Monitoring,Timber ,Vector,Apache License 2.0,1
+Observability and Analysis,Monitoring,Tingyun ,Tingyun,NotOpenSource,1
+Observability and Analysis,Monitoring,Turbonomic ,Turbonomic,NotOpenSource,1
+Observability and Analysis,Monitoring,VictoriaMetrics ,VictoriaMetrics,Apache License 2.0,1
+Observability and Analysis,Monitoring,VMware ,Wavefront,NotOpenSource,1
+Observability and Analysis,Monitoring,Weaveworks ,Weave Cloud,NotOpenSource,1
+Observability and Analysis,Monitoring,Weaveworks ,Weave Scope,Other,1
+Observability and Analysis,Monitoring,Xiaomi ,Falcon,Apache License 2.0,1
+Observability and Analysis,Monitoring,Zabbix ,Zabbix,GNU General Public License v2.0,1
+Observability and Analysis,Tracing,Ant Financial ,SOFATracer,Apache License 2.0,1
+Observability and Analysis,Tracing,Apache Software Foundation ,SkyWalking,Apache License 2.0,1
+Observability and Analysis,Tracing,Cloud Native Computing Foundation (CNCF) ,Jaeger,Apache License 2.0,1
+Observability and Analysis,Tracing,Cloud Native Computing Foundation (CNCF) ,OpenTelemetry,Apache License 2.0,1
+Observability and Analysis,Tracing,Cloud Native Computing Foundation (CNCF) ,OpenTracing,Apache License 2.0,1
+Observability and Analysis,Tracing,Elastic ,Elastic APM,Other,1
+Observability and Analysis,Tracing,Honeycomb ,Honeycomb,NotOpenSource,1
+Observability and Analysis,Tracing,LightStep ,LightStep,NotOpenSource,1
+Observability and Analysis,Tracing,Pinpoint ,Pinpoint,Apache License 2.0,1
+Observability and Analysis,Tracing,VMware ,Spring Cloud Sleuth,Apache License 2.0,1
+Observability and Analysis,Tracing,Zipkin ,Zipkin,Apache License 2.0,1
+Orchestration & Management,API Gateway,Accenture ,Reactive Interaction Gateway,Apache License 2.0,1
+Orchestration & Management,API Gateway,Alibaba Cloud ,Sentinel,Apache License 2.0,1
+Orchestration & Management,API Gateway,Apache Software Foundation ,APISIX,Apache License 2.0,1
+Orchestration & Management,API Gateway,Brutale ,KrakenD,Other,1
+Orchestration & Management,API Gateway,Datawire ,Ambassador,Apache License 2.0,1
+Orchestration & Management,API Gateway,Kong ,Kong,Other,1
+Orchestration & Management,API Gateway,LunchBadger ,Express Gateway,Apache License 2.0,1
+Orchestration & Management,API Gateway,Mia-Platform ,Mia-Platform,NotOpenSource,1
+Orchestration & Management,API Gateway,Red Hat ,3Scale,Apache License 2.0,1
+Orchestration & Management,API Gateway,Salesforce ,MuleSoft,Other,1
+Orchestration & Management,API Gateway,Solo.io ,Gloo,Apache License 2.0,1
+Orchestration & Management,API Gateway,Tyk ,Tyk,Other,1
+Orchestration & Management,API Gateway,WSO2 ,WSO2 API Microgateway,Apache License 2.0,1
+Orchestration & Management,Coordination & Service Discovery,Alibaba Cloud ,Nacos,Apache License 2.0,1
+Orchestration & Management,Coordination & Service Discovery,Apache Software Foundation ,Apache Zookeeper,Apache License 2.0,1
+Orchestration & Management,Coordination & Service Discovery,Cloud Native Computing Foundation (CNCF) ,CoreDNS,Apache License 2.0,1
+Orchestration & Management,Coordination & Service Discovery,Cloud Native Computing Foundation (CNCF) ,etcd,Apache License 2.0,1
+Orchestration & Management,Coordination & Service Discovery,Netflix ,Netflix Eureka,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Ant Financial ,SOFARPC,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Apache Software Foundation ,Apache Thrift,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Apache Software Foundation ,Avro,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Apache Software Foundation ,Dubbo,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Cloud Native Computing Foundation (CNCF) ,gRPC,Apache License 2.0,1
+Orchestration & Management,Remote Procedure Call,Linux Foundation ,TARS,Unknown License,1
+Orchestration & Management,Scheduling & Orchestration,Amazon Web Services ,Amazon Elastic Container Service (ECS),NotOpenSource,1
+Orchestration & Management,Scheduling & Orchestration,Apache Software Foundation ,Apache Mesos,Apache License 2.0,1
+Orchestration & Management,Scheduling & Orchestration,Cloud Native Computing Foundation (CNCF) ,Kubernetes,Apache License 2.0,1
+Orchestration & Management,Scheduling & Orchestration,Docker ,Docker Swarm,Apache License 2.0,1
+Orchestration & Management,Scheduling & Orchestration,HashiCorp ,Nomad,Mozilla Public License 2.0,1
+Orchestration & Management,Scheduling & Orchestration,Huawei Technologies ,Volcano,Apache License 2.0,1
+Orchestration & Management,Scheduling & Orchestration,Microsoft ,Azure Service Fabric,MIT License,1
+Orchestration & Management,Scheduling & Orchestration,Upbound ,Crossplane,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Cloud Native Computing Foundation (CNCF) ,Linkerd,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Cloud Native Computing Foundation (CNCF) ,Service Mesh Interface (SMI),Apache License 2.0,1
+Orchestration & Management,Service Mesh,Containous ,Maesh,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Decipher Technology Studios ,Grey Matter,NotOpenSource,1
+Orchestration & Management,Service Mesh,Google ,Istio,Apache License 2.0,1
+Orchestration & Management,Service Mesh,HashiCorp ,Consul,Mozilla Public License 2.0,1
+Orchestration & Management,Service Mesh,Kong ,Kuma,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Netflix ,Netflix Zuul,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Solo.io ,SuperGloo,Apache License 2.0,1
+Orchestration & Management,Service Mesh,Vamp.io ,Vamp,Apache License 2.0,1
+Orchestration & Management,Service Proxy,Alibaba Cloud ,Tengine,Other,1
+Orchestration & Management,Service Proxy,Ant Financial ,MOSN,Apache License 2.0,1
+Orchestration & Management,Service Proxy,Baidu ,BFE,Apache License 2.0,1
+Orchestration & Management,Service Proxy,Citrix Systems ,Citrix ADC (formerly NetScaler ADC),NotOpenSource,1
+Orchestration & Management,Service Proxy,Cloud Native Computing Foundation (CNCF) ,Envoy,Apache License 2.0,1
+Orchestration & Management,Service Proxy,Containous ,Traefik,MIT License,1
+Orchestration & Management,Service Proxy,F5 Networks ,F5,NotOpenSource,1
+Orchestration & Management,Service Proxy,HAProxy Technologies ,HAProxy,Other,1
+Orchestration & Management,Service Proxy,MetalLB ,MetalLB,Apache License 2.0,1
+Orchestration & Management,Service Proxy,NGINX ,NGINX,Unknown License,1
+Orchestration & Management,Service Proxy,OpenFaaS ,Inlets,MIT License,1
+Orchestration & Management,Service Proxy,OpenResty ,OpenResty,Other,1
+Orchestration & Management,Service Proxy,Snapt ,Snapt Nova,NotOpenSource,1
+Orchestration & Management,Service Proxy,VMware ,Avi Networks,NotOpenSource,1
+Orchestration & Management,Service Proxy,VMware ,Contour,Apache License 2.0,1
+Orchestration & Management,Service Proxy,VMware ,Gimbal,Apache License 2.0,1
+Orchestration & Management,Service Proxy,Zalando ,Skipper,Other,1
+Platform,Certified Kubernetes - Distribution,Acornsoft ,Cocktail Cloud,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Agile Stacks ,Agile Stacks DevOps Automation Platform,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Alauda ,Alauda Cloud Enterprise (ACE),NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Alauda ,Alauda Container Platform (ACP),NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,AsiaInfo ,K8splus,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Banzai Cloud ,Banzai Cloud Pipeline Kubernetes Engine (PKE),NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Caicloud ,Caicloud Compass,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Canonical ,Canonical Charmed Distribution of Kubernetes,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Canonical ,MicroK8s,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,China Unicom ,Chinaunicom Kubernetes Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Cisco ,Cisco Container Platform,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Cloud Foundry Foundation ,Cloud Foundry Container Runtime,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,clusterfrak-dynamics ,Symplegma,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,D2iQ ,D2iQ Konvoy,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,D2iQ ,Mesosphere Kubernetes Engine (MKE),NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,DaoCloud ,DaoCloud Enterprise,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Diamanti ,Diamanti-DXX,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Docker ,Docker Desktop,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,EasyStack ,EasyStack Kubernetes Service (EKS),NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Elastisys ,Elastisys Compliant Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Ericsson ,Ericsson Cloud Container Distribution,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Flexkube ,Flexkube,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Giant Swarm ,Giant Swarm Managed Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Grape Up ,Cloudboostr,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Gravitational ,Gravity,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,H3C Technologies ,H3C CloudOS,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Hewlett Packard Enterprise ,HPE Container Platform,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Huawei Technologies ,Huawei FusionStage,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,ILKI ,AgoraKube,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Inspur Group ,Board,MIT License,1
+Platform,Certified Kubernetes - Distribution,Intel ,Clear Linux Project,Unknown License,1
+Platform,Certified Kubernetes - Distribution,JD.com ,JD.com TIG Jingdong Datacenter OS,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Joyent ,Joyent Triton for Kubernetes,Mozilla Public License 2.0,1
+Platform,Certified Kubernetes - Distribution,Kubedee ,kubedee,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Kublr ,Kublr,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Loodse ,Kubermatic,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,MiaoYun ,MiaoYun,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Mirantis ,Mirantis Docker Enterprise,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Morpheus Data ,Morpheus,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,NetApp ,NetApp Kubernetes Service,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,NetEase ,Netease Container Service Dedicated,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,NetEase ,Netease Qingzhou Microservice,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Oracle ,Oracle Linux Cloud Native Environment,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Platform9 ,Platform9 Managed Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Poseidon ,Typhoon,MIT License,1
+Platform,Certified Kubernetes - Distribution,QingCloud ,Kubesphere,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Rancher Labs ,k3s,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Rancher Labs ,Rancher Kubernetes,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Red Hat ,Red Hat OpenShift,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Robin.io ,ROBIN Hyper-Converged Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Scality ,MetalK8s,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,SIGHUP ,Fury Distribution,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Platform,Certified Kubernetes - Distribution,SUSE ,Kubic,Unknown License,1
+Platform,Certified Kubernetes - Distribution,SUSE ,SUSE CaaS Platform,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,VMware ,VMware Enterprise PKS,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,VMware ,VMware Tanzu Kubernetes Grid,NotOpenSource,1
+Platform,Certified Kubernetes - Distribution,Wind River ,Wind River Cloud Platform,Apache License 2.0,1
+Platform,Certified Kubernetes - Distribution,Wise2c Technology ,WiseCloud,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Alibaba Cloud ,Alibaba Cloud Container Service for Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Amazon Web Services ,Amazon Elastic Container Service for Kubernetes (EKS),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Ant Financial ,SOFAStack Cloud Application Fabric Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Baidu ,Baidu Cloud Container Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Bocloud ,BoCloud BeyondContainer,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Catalyst Cloud ,Catalyst Kubernetes Service,Apache License 2.0,1
+Platform,Certified Kubernetes - Hosted,Cloud 66 ,Cloud 66 Maestro,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,DigitalOcean ,DigitalOcean Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,eBaoTech ,eBaoCloud,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,ELASTX ,ELASTX Private Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Google ,Google Kubernetes Engine (GKE),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Hangzhou Harmony Technology ,HarmonyCloud Container Platform,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Huawei Technologies ,Huawei Cloud Container Engine (CCE),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,IBM ,IBM Cloud Kubernetes Service,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,IBM ,Red Hat OpenShift on IBM Cloud,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,INNOVO Cloud ,iNNOVO Managed Kubernetes Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Inspur Group ,Inspur Cloud Container Engine and Inspur Open Platform,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Inspur Group ,Inspur ICKS,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Inspur Group ,Inspur Open Platform for ARM,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,JD.com ,JD Cloud JCS for Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,JD.com ,JD.com JDOS Hosted,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Kazuhm ,Kazuhm Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Kingsoft ,Kingsoft Container Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Linode ,Linode Kubernetes Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,MacStadium ,Orka,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Mail.Ru Group ,Mail.Ru Cloud Containers,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Microsoft ,AKS Engine for Azure Stack,MIT License,1
+Platform,Certified Kubernetes - Hosted,Microsoft ,Azure (AKS) Engine,MIT License,1
+Platform,Certified Kubernetes - Hosted,Microsoft ,Azure Kubernetes Service (AKS),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Nirmata ,Nirmata Managed Kubernetes,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Nutanix ,Nutanix Karbon,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Oracle ,Oracle Container Engine,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,OVHcloud ,OVH Managed Kubernetes Service,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Rackspace ,Rackspace Kubernetes-as-a-Service,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Rafay Systems ,Rafay,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Red Hat ,Red Hat OpenShift Dedicated,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Samsung SDS ,Samsung SDS Kubernetes Service,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,SAP ,SAP Certified Gardener,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Scaleway ,Scaleway Kubernetes Kapsule,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,SysEleven ,SysEleven MetaKube,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Tencent Holdings ,Tencent Kubernetes Engine (TKE),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,UCloud Information Technology ,UCloud Kubernetes Service（UK8S),NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,Ventus Cloud ,Ventus Cloud Kubernetes Service,NotOpenSource,1
+Platform,Certified Kubernetes - Hosted,VEXXHOST ,VEXXHOST Kubernetes Container Service,Apache License 2.0,1
+Platform,Certified Kubernetes - Hosted,ZTE ,ZTE TECS OpenPalette,NotOpenSource,1
+Platform,Certified Kubernetes - Installer,CableLabs ,CableLabs SNAPS-Kubernetes,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cloud Native Computing Foundation (CNCF) ,kind,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cloud Native Computing Foundation (CNCF) ,kops,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cloud Native Computing Foundation (CNCF) ,Kubeadm,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cloud Native Computing Foundation (CNCF) ,Kubespray,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cloud Native Computing Foundation (CNCF) ,minikube,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Cybozu ,Cybozu Kubernetes Engine,MIT License,1
+Platform,Certified Kubernetes - Installer,FIT2CLOUD ,KubeOperator,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Google ,Google Kube-Up,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Kubernetes - The Easier Way ,Kubernetes - The Easier Way,GNU General Public License v3.0,1
+Platform,Certified Kubernetes - Installer,Loodse ,KubeOne,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,noris network ,Koris,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,OpenStack ,Magnum,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Puppet ,puppetlabs-kubernetes,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,Rancher Labs ,Rancher Kubernetes Engine (RKE),Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,SAP ,Gardener,Apache License 2.0,1
+Platform,Certified Kubernetes - Installer,SIGHUP ,Fury Installers,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Platform,Certified Kubernetes - Installer,Talos Systems ,Talos,Mozilla Public License 2.0,1
+Platform,Certified Kubernetes - Installer,Wise2c Technology ,Wise2C Technology Breeze,Apache License 2.0,1
+Platform,PaaS/Container Service,Atomist ,Atomist,NotOpenSource,1
+Platform,PaaS/Container Service,Cloud Foundry Foundation ,Cloud Foundry Application Runtime,Apache License 2.0,1
+Platform,PaaS/Container Service,Flynn ,Flynn,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Platform,PaaS/Container Service,JHipster ,JHipster,Apache License 2.0,1
+Platform,PaaS/Container Service,No Code ,No Code,Apache License 2.0,1
+Platform,PaaS/Container Service,Platform.sh ,Platform.sh,NotOpenSource,1
+Platform,PaaS/Container Service,Portainer ,Portainer,zlib License,1
+Platform,PaaS/Container Service,Rancher Labs ,Rio,Apache License 2.0,1
+Platform,PaaS/Container Service,Salesforce ,Heroku,NotOpenSource,1
+Platform,PaaS/Container Service,Scalingo ,Scalingo,NotOpenSource,1
+Platform,PaaS/Container Service,Tsuru ,Tsuru,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Platform,PaaS/Container Service,YellowDog ,YellowDog,NotOpenSource,1
+Platform,PaaS/Container Service,Yelp ,PaaSTA,Apache License 2.0,1
+Provisioning,Automation & Configuration,Amazon Web Services ,AWS CloudFormation,NotOpenSource,1
+Provisioning,Automation & Configuration,Canonical ,Juju,GNU Affero General Public License v3.0,1
+Provisioning,Automation & Configuration,Canonical ,MAAS,GNU Affero General Public License v3.0,1
+Provisioning,Automation & Configuration,CFEngine ,CFEngine,Other,1
+Provisioning,Automation & Configuration,Chef Software ,Chef Infra,Apache License 2.0,1
+Provisioning,Automation & Configuration,Cloud Foundry Foundation ,BOSH,Apache License 2.0,1
+Provisioning,Automation & Configuration,Cloud Native Computing Foundation (CNCF) ,KubeEdge,Apache License 2.0,1
+Provisioning,Automation & Configuration,Cloudify ,Cloudify,Apache License 2.0,1
+Provisioning,Automation & Configuration,Ctrip ,Apollo,Apache License 2.0,1
+Provisioning,Automation & Configuration,Docker ,LinuxKit,Apache License 2.0,1
+Provisioning,Automation & Configuration,Foreman ,Foreman,GNU General Public License v3.0,1
+Provisioning,Automation & Configuration,HashiCorp ,Terraform,Mozilla Public License 2.0,1
+Provisioning,Automation & Configuration,Kubicorn ,Kubicorn,Apache License 2.0,1
+Provisioning,Automation & Configuration,ManageIQ ,ManageIQ,Apache License 2.0,1
+Provisioning,Automation & Configuration,OpenStack ,Airship,Apache License 2.0,1
+Provisioning,Automation & Configuration,OpenStack ,OpenStack,Apache License 2.0,1
+Provisioning,Automation & Configuration,Pulumi ,Pulumi,Apache License 2.0,1
+Provisioning,Automation & Configuration,Puppet ,Puppet,Apache License 2.0,1
+Provisioning,Automation & Configuration,RackN ,Digital Rebar,Other,1
+Provisioning,Automation & Configuration,Red Hat ,Ansible,GNU General Public License v3.0,1
+Provisioning,Automation & Configuration,Rundeck ,Rundeck,Apache License 2.0,1
+Provisioning,Automation & Configuration,SaltStack ,SaltStack,Other,1
+Provisioning,Automation & Configuration,StackStorm ,StackStorm,Apache License 2.0,1
+Provisioning,Automation & Configuration,Uber ,Cadence Workflow,MIT License,1
+Provisioning,Automation & Configuration,VMware ,VMware vSphere,NotOpenSource,1
+Provisioning,Container Registry,Amazon Web Services ,Amazon Elastic Container Registry (ECR),NotOpenSource,1
+Provisioning,Container Registry,Cloud Native Computing Foundation (CNCF) ,Dragonfly,Apache License 2.0,1
+Provisioning,Container Registry,Cloud Native Computing Foundation (CNCF) ,Harbor,Apache License 2.0,1
+Provisioning,Container Registry,Codefresh ,Codefresh Registry,NotOpenSource,1
+Provisioning,Container Registry,Docker ,Docker Registry,Apache License 2.0,1
+Provisioning,Container Registry,Google ,Google Container Registry,NotOpenSource,1
+Provisioning,Container Registry,IBM ,IBM Cloud Container Registry,NotOpenSource,1
+Provisioning,Container Registry,JFrog ,JFrog Artifactory,NotOpenSource,1
+Provisioning,Container Registry,Microsoft ,Azure Registry,NotOpenSource,1
+Provisioning,Container Registry,Red Hat ,Quay,Apache License 2.0,1
+Provisioning,Container Registry,SUSE ,Portus,Apache License 2.0,1
+Provisioning,Container Registry,Uber ,Kraken,Apache License 2.0,1
+Provisioning,Key Management,BuzzFeed ,sso,MIT License,1
+Provisioning,Key Management,Cloud Native Computing Foundation (CNCF) ,SPIFFE,Apache License 2.0,1
+Provisioning,Key Management,Cloud Native Computing Foundation (CNCF) ,SPIRE,Apache License 2.0,1
+Provisioning,Key Management,CyberArk Software ,CyberArk Conjur,GNU Lesser General Public License v3.0,1
+Provisioning,Key Management,Gravitational ,Teleport,Apache License 2.0,1
+Provisioning,Key Management,HashiCorp ,Vault,Mozilla Public License 2.0,1
+Provisioning,Key Management,ORY ,ORY Hydra,Apache License 2.0,1
+Provisioning,Key Management,Pomerium ,Pomerium,Apache License 2.0,1
+Provisioning,Key Management,Pusher ,OAuth2 Proxy,MIT License,1
+Provisioning,Key Management,Red Hat ,Keycloak,Apache License 2.0,1
+Provisioning,Key Management,Square ,Square Keywhiz,Apache License 2.0,1
+Provisioning,Key Management,Verizon Media ,Athenz,Apache License 2.0,1
+Provisioning,Security & Compliance,Alcide ,Alcide,NotOpenSource,1
+Provisioning,Security & Compliance,Anchore ,Anchore,Apache License 2.0,1
+Provisioning,Security & Compliance,Aqua Security ,Aqua,NotOpenSource,1
+Provisioning,Security & Compliance,Aqua Security ,kube-bench,Apache License 2.0,1
+Provisioning,Security & Compliance,Aqua Security ,kube-hunter,Apache License 2.0,1
+Provisioning,Security & Compliance,Aqua Security ,Trivy,Apache License 2.0,1
+Provisioning,Security & Compliance,Bloombase ,Bloombase,NotOpenSource,1
+Provisioning,Security & Compliance,Check Point Software Technologies ,Check Point,NotOpenSource,1
+Provisioning,Security & Compliance,Chef Software ,Chef InSpec,Other,1
+Provisioning,Security & Compliance,Cloud Native Computing Foundation (CNCF) ,Falco,Apache License 2.0,1
+Provisioning,Security & Compliance,Cloud Native Computing Foundation (CNCF) ,in-toto,Other,1
+Provisioning,Security & Compliance,Cloud Native Computing Foundation (CNCF) ,Notary,Apache License 2.0,1
+Provisioning,Security & Compliance,Cloud Native Computing Foundation (CNCF) ,Open Policy Agent (OPA),Apache License 2.0,1
+Provisioning,Security & Compliance,Cloud Native Computing Foundation (CNCF) ,The Update Framework (TUF),Other,1
+Provisioning,Security & Compliance,Datica ,Datica,NotOpenSource,1
+Provisioning,Security & Compliance,FOSSA ,Fossa,Mozilla Public License 2.0,1
+Provisioning,Security & Compliance,FOSSID ,FOSSID,NotOpenSource,1
+Provisioning,Security & Compliance,Google ,Grafeas,Apache License 2.0,1
+Provisioning,Security & Compliance,Jetstack ,cert-manager,Apache License 2.0,1
+Provisioning,Security & Compliance,NeuVector ,NeuVector,NotOpenSource,1
+Provisioning,Security & Compliance,Palo Alto Networks ,Prisma Cloud Security Suite,NotOpenSource,1
+Provisioning,Security & Compliance,Red Hat ,Clair,Other,1
+Provisioning,Security & Compliance,Red Hat ,OpenSCAP,GNU Lesser General Public License v2.1,1
+Provisioning,Security & Compliance,Snyk ,Snyk,NotOpenSource,1
+Provisioning,Security & Compliance,Sonatype ,Sonatype Nexus,NotOpenSource,1
+Provisioning,Security & Compliance,StackRox ,StackRox,NotOpenSource,1
+Provisioning,Security & Compliance,Synopsys ,Black Duck,NotOpenSource,1
+Provisioning,Security & Compliance,Sysdig ,Sysdig Secure,NotOpenSource,1
+Provisioning,Security & Compliance,Tigera ,Tigera,NotOpenSource,1
+Provisioning,Security & Compliance,Trend Micro ,Trend Micro Cloud One,NotOpenSource,1
+Provisioning,Security & Compliance,VMware ,Sonobuoy,Apache License 2.0,1
+Provisioning,Security & Compliance,WhiteSource ,WhiteSource,NotOpenSource,1
+Runtime,Cloud Native Network,Alauda ,Kube-OVN,Apache License 2.0,1
+Runtime,Cloud Native Network,Aporeto ,Aporeto,NotOpenSource,1
+Runtime,Cloud Native Network,Aviatrix Systems ,Aviatrix,NotOpenSource,1
+Runtime,Cloud Native Network,Big Switch Networks ,Big Switch Networks,NotOpenSource,1
+Runtime,Cloud Native Network,Cisco ,Contiv,Apache License 2.0,1
+Runtime,Cloud Native Network,Cisco ,Ligato,Apache License 2.0,1
+Runtime,Cloud Native Network,Cloud Native Computing Foundation (CNCF) ,Container Network Interface (CNI),Apache License 2.0,1
+Runtime,Cloud Native Network,Cloud Native Computing Foundation (CNCF) ,Network Service Mesh,Apache License 2.0,1
+Runtime,Cloud Native Network,Cloud Native Labs ,Kube-router,Apache License 2.0,1
+Runtime,Cloud Native Network,Cumulus Networks ,Cumulus,NotOpenSource,1
+Runtime,Cloud Native Network,Guardicore ,Guardicore Centra,NotOpenSource,1
+Runtime,Cloud Native Network,Intel ,Multus,Apache License 2.0,1
+Runtime,Cloud Native Network,Isovalent ,Cilium,Apache License 2.0,1
+Runtime,Cloud Native Network,LF Networking ,FD.io,Apache License 2.0,1
+Runtime,Cloud Native Network,LF Networking ,Tungsten Fabric,Apache License 2.0,1
+Runtime,Cloud Native Network,Nokia ,DANM,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Runtime,Cloud Native Network,Nuage Networks ,Nuage Networks,NotOpenSource,1
+Runtime,Cloud Native Network,Open vSwitch ,Open vSwitch,Apache License 2.0,1
+Runtime,Cloud Native Network,Red Hat ,Flannel,Apache License 2.0,1
+Runtime,Cloud Native Network,Tigera ,Project Calico,Apache License 2.0,1
+Runtime,Cloud Native Network,VMware ,Antrea,Apache License 2.0,1
+Runtime,Cloud Native Network,VMware ,VMware NSX,NotOpenSource,1
+Runtime,Cloud Native Network,Weaveworks ,Weave Net,Other,1
+Runtime,Cloud Native Storage,Alluxio ,Alluxio,Apache License 2.0,1
+Runtime,Cloud Native Storage,Amazon Web Services ,Amazon Elastic Block Store (EBS),NotOpenSource,1
+Runtime,Cloud Native Storage,Arrikto ,Arrikto,NotOpenSource,1
+Runtime,Cloud Native Storage,Ceph Foundation ,Ceph,Other,1
+Runtime,Cloud Native Storage,Cloud Native Computing Foundation (CNCF) ,ChubaoFS,Apache License 2.0,1
+Runtime,Cloud Native Storage,Cloud Native Computing Foundation (CNCF) ,Longhorn,Apache License 2.0,1
+Runtime,Cloud Native Storage,Cloud Native Computing Foundation (CNCF) ,OpenEBS,Apache License 2.0,1
+Runtime,Cloud Native Storage,Cloud Native Computing Foundation (CNCF) ,Rook,Apache License 2.0,1
+Runtime,Cloud Native Storage,Datera ,Datera,NotOpenSource,1
+Runtime,Cloud Native Storage,Dell EMC ,Dell EMC,NotOpenSource,1
+Runtime,Cloud Native Storage,Diamanti ,Diamanti,NotOpenSource,1
+Runtime,Cloud Native Storage,DriveScale ,DriveScale,NotOpenSource,1
+Runtime,Cloud Native Storage,Elastifile ,Elastifile,NotOpenSource,1
+Runtime,Cloud Native Storage,Google ,Container Storage Interface (CSI),Apache License 2.0,1
+Runtime,Cloud Native Storage,Google ,Google Persistent Disk,NotOpenSource,1
+Runtime,Cloud Native Storage,Hedvig ,Hedvig,NotOpenSource,1
+Runtime,Cloud Native Storage,Hewlett Packard Enterprise ,HPE Storage,NotOpenSource,1
+Runtime,Cloud Native Storage,Hitachi ,Hitachi,NotOpenSource,1
+Runtime,Cloud Native Storage,Infinidat ,INFINIDAT,NotOpenSource,1
+Runtime,Cloud Native Storage,Joyent ,Triton Object Storage,Mozilla Public License 2.0,1
+Runtime,Cloud Native Storage,Kasten ,Kasten,NotOpenSource,1
+Runtime,Cloud Native Storage,Microsoft ,Azure Disk Storage,NotOpenSource,1
+Runtime,Cloud Native Storage,MinIO ,MinIO,Apache License 2.0,1
+Runtime,Cloud Native Storage,NetApp ,NetApp,NotOpenSource,1
+Runtime,Cloud Native Storage,Nutanix ,Nutanix Objects,NotOpenSource,1
+Runtime,Cloud Native Storage,OpenIO ,OpenIO,Other,1
+Runtime,Cloud Native Storage,OpenSDS ,OpenSDS,Apache License 2.0,1
+Runtime,Cloud Native Storage,OpenStack ,Swift,Apache License 2.0,1
+Runtime,Cloud Native Storage,Portworx ,Portworx,NotOpenSource,1
+Runtime,Cloud Native Storage,Pure Storage ,Pure Storage,NotOpenSource,1
+Runtime,Cloud Native Storage,Quobyte ,Quobyte,NotOpenSource,1
+Runtime,Cloud Native Storage,Red Hat ,Gluster,Other,1
+Runtime,Cloud Native Storage,Reduxio ,Reduxio,NotOpenSource,1
+Runtime,Cloud Native Storage,Robin.io ,Robin Systems,NotOpenSource,1
+Runtime,Cloud Native Storage,Scality ,Scality RING,NotOpenSource,1
+Runtime,Cloud Native Storage,Scality ,Zenko,Apache License 2.0,1
+Runtime,Cloud Native Storage,StorageOS ,StorageOS,NotOpenSource,1
+Runtime,Cloud Native Storage,Tuxera ,MooseFS,GNU General Public License v2.0,1
+Runtime,Cloud Native Storage,VMware ,Velero,Apache License 2.0,1
+Runtime,Cloud Native Storage,XSKY Data Technology ,XSKY,NotOpenSource,1
+Runtime,Cloud Native Storage,YanRong ,YRCloudFile,NotOpenSource,1
+Runtime,Container Runtime,Alibaba Cloud ,Pouch,Apache License 2.0,1
+Runtime,Container Runtime,Amazon Web Services ,Firecracker,Apache License 2.0,1
+Runtime,Container Runtime,Canonical ,lxd,Apache License 2.0,1
+Runtime,Container Runtime,Cloud Native Computing Foundation (CNCF) ,containerd,Apache License 2.0,1
+Runtime,Container Runtime,Cloud Native Computing Foundation (CNCF) ,CRI-O,Apache License 2.0,1
+Runtime,Container Runtime,Google ,gVisor,Apache License 2.0,1
+Runtime,Container Runtime,IBM ,Nabla Containers,ISC License,1
+Runtime,Container Runtime,Joyent ,SmartOS,Unknown License,1
+Runtime,Container Runtime,Open Container Initiative (OCI) ,runc,Apache License 2.0,1
+Runtime,Container Runtime,OpenStack ,Kata Containers,Apache License 2.0,1
+Runtime,Container Runtime,Solo.io ,Unik,Apache License 2.0,1
+Runtime,Container Runtime,Sylabs ,Singularity,Other,1
+Serverless,Framework,Amazon Web Services ,AWS Server Application Model (SAM),Apache License 2.0,1
+Serverless,Framework,Amazon Web Services ,Chalice,Apache License 2.0,1
+Serverless,Framework,Apex ,Apex,MIT License,1
+Serverless,Framework,ClaudiaJS ,ClaudisJS,MIT License,1
+Serverless,Framework,Microsoft ,Dapr,MIT License,1
+Serverless,Framework,OpenJS Foundation ,Architect,Unknown License,1
+Serverless,Framework,Serverless ,Serverless  ,MIT License,1
+Serverless,Framework,Sparta ,Sparta,MIT License,1
+Serverless,Framework,Tibco Software ,Flogo,"BSD 3-Clause ""New"" or ""Revised"" License",1
+Serverless,Framework,VMware ,Spring Cloud Function,Apache License 2.0,1
+Serverless,Hosted Platform,Algorithmia ,Algorithmia,NotOpenSource,1
+Serverless,Hosted Platform,Alibaba Cloud ,Alibaba Cloud Function Compute,NotOpenSource,1
+Serverless,Hosted Platform,Amazon Web Services ,AWS Lambda,NotOpenSource,1
+Serverless,Hosted Platform,Binaris ,Binaris,NotOpenSource,1
+Serverless,Hosted Platform,Cloudflare ,Cloudflare Workers,NotOpenSource,1
+Serverless,Hosted Platform,Google ,Google Cloud Functions,NotOpenSource,1
+Serverless,Hosted Platform,Huawei Technologies ,Huawei FunctionStage,NotOpenSource,1
+Serverless,Hosted Platform,IBM ,IBM Cloud Functions,NotOpenSource,1
+Serverless,Hosted Platform,Microsoft ,Azure Functions,Other,1
+Serverless,Hosted Platform,Netlify ,Netlify Functions,NotOpenSource,1
+Serverless,Hosted Platform,Nimbella ,Nimbella,NotOpenSource,1
+Serverless,Hosted Platform,Nuweba ,Nuweba,NotOpenSource,1
+Serverless,Hosted Platform,Oracle ,Oracle Functions,NotOpenSource,1
+Serverless,Hosted Platform,PubNub ,PubNub Functions,NotOpenSource,1
+Serverless,Hosted Platform,Spot ,Spotinst Functions,NotOpenSource,1
+Serverless,Hosted Platform,Standard Library ,Standard Library,NotOpenSource,1
+Serverless,Hosted Platform,Tencent Holdings ,Tencent Cloud Serverless Cloud Function,NotOpenSource,1
+Serverless,Hosted Platform,Twilio ,Twilio Functions,NotOpenSource,1
+Serverless,Hosted Platform,ZEIT ,Zeit Now,NotOpenSource,1
+Serverless,Installable Platform,Apache Software Foundation ,Apache Camel K,Apache License 2.0,1
+Serverless,Installable Platform,Apache Software Foundation ,Apache OpenWhisk,Apache License 2.0,1
+Serverless,Installable Platform,AppScale Systems ,AppScale,Apache License 2.0,1
+Serverless,Installable Platform,Cloud Native Computing Foundation (CNCF) ,Keda,Apache License 2.0,1
+Serverless,Installable Platform,Cloud Native Computing Foundation (CNCF) ,Virtual Kubelet,Apache License 2.0,1
+Serverless,Installable Platform,Google ,Knative,Apache License 2.0,1
+Serverless,Installable Platform,Iguazio ,Nuclio,Apache License 2.0,1
+Serverless,Installable Platform,Kubeless ,Kubeless,Apache License 2.0,1
+Serverless,Installable Platform,OpenFaaS ,OpenFaaS,MIT License,1
+Serverless,Installable Platform,Oracle ,Fn,Apache License 2.0,1
+Serverless,Installable Platform,PipelineAI ,PipelineAI,Apache License 2.0,1
+Serverless,Installable Platform,Platform9 ,Fission,Apache License 2.0,1
+Serverless,Installable Platform,SAP ,Kyma,Apache License 2.0,1
+Serverless,Installable Platform,VMware ,Riff,Apache License 2.0,1
+Serverless,Security,Protego Labs ,Protego,NotOpenSource,1
+Serverless,Security,Threat Stack ,Threat Stack,NotOpenSource,1
+Serverless,Tools,Cloud Native Computing Foundation (CNCF) ,Cloud Native Landscape,Apache License 2.0,1
+Serverless,Tools,CloudZero ,CloudZero,NotOpenSource,1
+Serverless,Tools,Dashbird ,Dashbird,NotOpenSource,1
+Serverless,Tools,Hasura ,Hasura GraphQL Engine,Other,1
+Serverless,Tools,IOpipe ,IOpipe,NotOpenSource,1
+Serverless,Tools,Iron.io ,Iron.io,NotOpenSource,1
+Serverless,Tools,Lumigo ,Lumigo,NotOpenSource,1
+Serverless,Tools,Node Lambda ,Node Lambda,"BSD 2-Clause ""Simplified"" License",1
+Serverless,Tools,Polytechnic University of Valencia ,SCAR,Apache License 2.0,1
+Serverless,Tools,SLAppForge ,Sigma,NotOpenSource,1
+Serverless,Tools,Stackery ,Stackery,NotOpenSource,1
+Serverless,Tools,Thundra ,Thundra,NotOpenSource,1
+Special,Kubernetes Certified Service Provider,2ndQuadrant ,2ndQuadrant (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,99cloud ,99Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Acaisoft ,Acaisoft (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Accenture ,Accenture (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Acornsoft ,Acornsoft (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Adfolks ,Adfolks (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Alauda ,Alauda (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Alibaba Cloud ,Alibaba Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Altoros ,Altoros (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Appvia ,Appvia (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Aqua Security ,Aqua Security (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Arm Holdings ,Arm Treasure Data (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Baidu ,Baidu (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Banzai Cloud ,Banzai Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Blue Sentry ,Blue Sentry (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Bocloud ,BoCloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Booz Allen Hamilton ,Booz Allen Hamilton (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,BoxBoat Technologies ,BoxBoat (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Brobridge ,Brobridge (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Btech ,Boer Technology (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Caicloud ,Caicloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Camptocamp ,Camptocamp (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Canonical ,Canonical (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Catalyst Cloud ,Catalyst Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Cengn ,CENGN (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,China-ASEAN Information Harbor ,China-ASEAN Information Harbor (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Cloud IQ Technologies ,CloudIQ (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,CloudOps ,CloudOps (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,CloudToGo ,CloudToGo (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,CloudYuga ,CloudYuga (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Component Soft ,Component Soft (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Conoa ,Conoa (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Container Solutions ,Container Solutions (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Contino ,Contino (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,ControlPlane ,ControlPlane (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,CoreHive Computing ,CoreHive Computing (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Creationline ,Creationline (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Cuemby ,Cuemby (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,D2iQ ,D2iQ (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,DaoCloud ,DaoCloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Darumatic ,Darumatic (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Data Essential ,Data Essential (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Datadrivers ,Datadrivers (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Dell ,Dell Technologies Consulting (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Deloitte ,Deloitte (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Desotech ,Desotech (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Diamanti ,Diamanti (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,DoiT International ,DoiT International (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,EasyStack ,EasyStack (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Eficode ,Eficode (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Elastisys ,Elastisys (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,ELASTX ,ELASTX (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Entigo ,Entigo (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Fairwinds ,Fairwinds (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Flant ,Flant (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Fujitsu ,Fujitsu (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Fullstaq ,Fullstaq (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Giant Swarm ,Giant Swarm (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Grape Up ,Grape Up (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Gravitational ,Gravitational (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Hangzhou Harmony Technology ,HarmonyCloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,HCL Technologies ,HCL Technologies (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Huawei Technologies ,Huawei (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,IBM ,IBM Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,InfraCloud Technologies ,InfraCloud Technologies (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,inovex ,inovex (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Inspur Group ,Inspur (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,inwinSTACK ,inwinSTACK (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,JD.com ,JD Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Jetstack ,Jetstack (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Kingsoft ,Kingsoft Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Kinvolk ,Kinvolk (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Kiratech ,Kiratech (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,kloia ,kloia (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Kublr ,Kublr (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Kumina ,Kumina (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Loodse ,Loodse (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Matrix ,CloudZone (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,MayaData ,MayaData (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Microsoft ,Microsoft (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Mirantis ,Mirantis (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Mobilise Cloud ,Mobilise Cloud Services (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,MSys Technologies ,MSys Technologies (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Navitas Business Consulting ,Navitas Business Consulting (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Nebulaworks ,Nebulaworks (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,NEC Corporation ,NEC (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,NetApp ,NetApp (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,NetEase ,Netease (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Neualto ,NeuAlto Technologies (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,New Context ,New Context (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Nirmata ,Nirmata (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,noris network ,noris network (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,NTT Data ,NTT DATA (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,OCTO Technology ,OCTO Technology (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Origoss Solutions ,Origoss Solutions (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Oteemo ,Oteemo (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Ping An ,Ping An Technology (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Platform9 ,Platform9 (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Platformer ,Platformer (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Polar Squad ,Polar Squad (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Portworx ,Portworx (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,PRODYNA ,PRODYNA (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Puzzle ,Puzzle ITC (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Rackner ,Rackner (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Rackspace ,Rackspace (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Rafay Systems ,Rafay (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Rancher Labs ,Rancher (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Red Kubes ,Red Kubes (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Redeploy ,Redeploy (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,RX-M ,RX-M (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,SAIC ,SAIC (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Samsung SDS ,Samsung SDS (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,SAP ,SAP (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,ServiceMEME ,ServiceMeme (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,SIGHUP ,SIGHUP (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,SkyWiz ,SkyWiz (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Southbridge ,Southbridge (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Sparkfabrik ,SparkFabrik (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Stakater ,Stakater (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Stark & Wayne ,Stark & Wayne (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Storm Reply ,Storm Reply (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,SUSE ,SUSE (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Tencent Holdings ,Tencent Cloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,TenxCloud ,TenxCloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,teutoStack ,teutoStack (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,The Scale Factory ,The Scale Factory (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Transwarp ,Transwarp (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,UCloud Information Technology ,UCloud (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,VA Linux Systems Japan ,VA Linux Systems Japan (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,VMware ,VMware (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,VSHN ,VSHN AG (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Weaveworks ,Weaveworks (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,WhizUs GmbH ,WhizUs (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,Wise2c Technology ,Wise2C (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,YLD ,YLD (KCSP),NotOpenSource,1
+Special,Kubernetes Certified Service Provider,ZTE ,ZTE (KCSP),NotOpenSource,1
+Special,Kubernetes Training Partner,99cloud ,99Cloud (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Acornsoft ,Acornsoft (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Alauda ,Alauda (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Altoros ,Altoros (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,BoxBoat Technologies ,BoxBoat (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Btech ,Boer Technology (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Caicloud ,Caicloud (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Camptocamp ,Camptocamp (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,CloudOps ,CloudOps (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,CloudYuga ,CloudYuga (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Component Soft ,Component Soft (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Conoa ,Conoa (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Container Solutions ,Container Solutions (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,ControlPlane ,ControlPlane (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Creationline ,Creationline (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Cuemby ,Cuemby (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,D2iQ ,D2iQ (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,DaoCloud ,DaoCloud (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Darumatic ,Darumatic (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Desotech ,Desotech (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,DoiT International ,DoiT International (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,EasyStack ,EasyStack (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Entigo ,Entigo (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Hangzhou Harmony Technology ,HarmonyCloud (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Huawei Technologies ,Huawei (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,inovex ,inovex (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,inwinSTACK ,inwinSTACK (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Kiratech ,Kiratech (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Linux Foundation ,The Linux Foundation Training (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Loodse ,Loodse (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Nebulaworks ,Nebulaworks (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Oteemo ,Oteemo (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Platformer ,Platformer (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,PRODYNA ,PRODYNA (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,RX-M ,RX-M (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,SIGHUP ,SIGHUP (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Southbridge ,Southbridge (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,Storm Reply ,Storm Reply (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,TenxCloud ,TenxCloud (KTP),NotOpenSource,1
+Special,Kubernetes Training Partner,WhizUs GmbH ,WhizUs (KTP),NotOpenSource,1
