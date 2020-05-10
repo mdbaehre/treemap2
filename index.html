@@ -318,19 +318,18 @@ input[type=range]::-moz-range-track {
 		<div id="treemap-legend-leafnode" style="text-align:center; margin-left: 15px; width=60%;"></div>
 		<div style="text-align: right; width=10%; ">
 		  <ul style="list-style: none; margin-top: 0;">
-		    <li style="color: #bbb;">NGA/TAED</span>
-		    <li style="color: #bbb;">Treemap v01May20</span>
+		    <li style="color: #bbb;">Treemap v01May20</li>
 		  </ul>
 		</div>
       </div>
     </div>
   </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.js"></script> 
+<script src="https://mdbaehre.github.io/treemap/d3.v515.min.js"></script> 
 <script>
 
 //************************************************************************************************************************//
 // CUSTOM SETTINGS FOR DATA (First 7 vars are mandatory)
-var CSVfileName = "CNCFLandscape.csv"  //the name of csv file (including its path relative to the location of the html file)
+var CSVfileName = "https://mdbaehre.github.io/treemap/CNCFLandscape.csv"  //the name of csv file (including its path relative to the location of the html file) 
 var dateOfData = "1 May 2020" //date of the data contained in the CSV file
 var treemapName = "CNCF Treemap"; //the name in the browser tab and also the top level of treemap (if 1st group has more than 1 unique value)
 var groupingOrderSet = {  //the order in which each row of data is grouped
@@ -361,9 +360,11 @@ var nodeColors = [];
 //*******************************************************************************************
 //MAIN FUNCTION
 document.getElementsByTagName("head")[0].getElementsByTagName("title")[0].text=treemapName; //label browser tab
-height = document.getElementById("container").offsetHeight - 160;
-width = 0.80*document.getElementById("container").offsetWidth;
-
+//height = document.getElementById("container").offsetHeight - 160;
+//width = 0.80*document.getElementById("container").offsetWidth;
+height = 900;
+width = 1600;	
+	
 d3.csv(CSVfileName).then(function(data){ //name of csv file to use
   qcConfigurationData(data);
   let initialGroupingOrder = groupingOrderSet[Object.keys(groupingOrderSet)[0]].slice();
