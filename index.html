@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <title>TRM Example Treemap</title>
 <style>
@@ -298,6 +298,7 @@ input[type=range]::-moz-range-track {
     <div id="modalContent"></div>
   </div>
   <div id="container" class="flex-container">
+    <div id="hiddenVizContainer" style="width:600px; height:600px; display: none"></div>
     <div id="filters" class="flex-container" style="flex-direction: column;"></div>
 	<div id="draghandle-vert" class="flex-container"></div>
     <div id="chart" class="flex-container" style="flex-direction: column; justify-content: flex-start;">
@@ -318,25 +319,28 @@ input[type=range]::-moz-range-track {
 		<div id="treemap-legend-leafnode" style="text-align:center; margin-left: 15px; width=60%;"></div>
 		<div style="text-align: right; width=10%; ">
 		  <ul style="list-style: none; margin-top: 0;">
+		    <li style="color: #bbb;">NGA/TAED</li>
 		    <li style="color: #bbb;">Treemap v01May20</li>
 		  </ul>
 		</div>
       </div>
     </div>
   </div>
-<script src="https://mdbaehre.github.io/treemap/d3.v515.min.js"></script> 
+<script src="d3.v515.min.js"></script> 
+<script src="https://public.tableau.com/javascripts/api/tableau-2.5.0.min.js"></script>
 <script>
 
 //************************************************************************************************************************//
 // CUSTOM SETTINGS FOR DATA (First 7 vars are mandatory)
-var CSVfileName = "https://mdbaehre.github.io/treemap/CNCFLandscape.csv"  //the name of csv file (including its path relative to the location of the html file) 
-var dateOfData = "1 May 2020" //date of the data contained in the CSV file
+var CSVfileName = "CNCFLandscape.csv";  //the name of csv file (including its path relative to the location of the html file)
+var url = "https://public.tableau.com/views/TreemapfromGithub/TreemapData";
+var dateOfData = "1 May 2020"; //date of the data contained in the CSV file
 var treemapName = "CNCF Treemap"; //the name in the browser tab and also the top level of treemap (if 1st group has more than 1 unique value)
 var groupingOrderSet = {  //the order in which each row of data is grouped
     "Default": ["Category", "Subcategory", "Name"],
-	"Organization-Product": ["Organization", "Name"],
-	"License-Product": ["License", "Name"]
-	};
+    "Organization-Product": ["Organization", "Name"],
+    "License-Product": ["License", "Name"]
+    };
 var nodeLabel = "Name"; //the name of the column used to label the leaf node
 var leafNodeSizeValueColumns = ["value"]; //the column name in the CSV file that holds numerical values used to determine the leaf node size
 var multiValueColumns = []; //the columns that have multiple values in a cell separated by the delimiter(below)
@@ -357,17 +361,17 @@ var leafNodeColor = {}; //an object with properties for each allowable leaf node
 var searchPropertiesList = []; //node properties to apply search to
 var filters = {}; //list of current property/value pairs used for filtering 
 var nodeColors = [];
+
 //*******************************************************************************************
 //MAIN FUNCTION
 document.getElementsByTagName("head")[0].getElementsByTagName("title")[0].text=treemapName; //label browser tab
-//height = document.getElementById("container").offsetHeight - 160;
-//width = 0.80*document.getElementById("container").offsetWidth;
-height = 900;
-width = 1600;	
-	
-d3.csv(CSVfileName).then(function(data){ //name of csv file to use
+  height = document.getElementById("container").offsetHeight - 160;
+  width = 0.80*document.getElementById("container").offsetWidth;
+getTableauData(url);//get treemap data from tableau server (calls buildTreemap function when complete)
+
+function buildTreemap(data){
   qcConfigurationData(data);
-  let initialGroupingOrder = groupingOrderSet[Object.keys(groupingOrderSet)[0]].slice();
+  var initialGroupingOrder = groupingOrderSet[Object.keys(groupingOrderSet)[0]].slice();
   nodeLabel = initialGroupingOrder.pop();
   setColorScheme(initialGroupingOrder);
   uniqueValues = createUniqueValuesList(data);
@@ -389,8 +393,8 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
     .style("font", "10px sans-serif");
   var home = treemap(root);  
   var group = svg.append("g").call(render, home);//create initial treemap view
-  d3.select("#draghandle-vert").on("mousedown", initResizeX)//add event to filtermenu-treemap divider
-  d3.select("#draghandle-horiz").on("mousedown", initResizeY)//add event to treemap-legend divider
+  d3.select("#draghandle-vert").on("mousedown", initResizeX);//add event to filtermenu-treemap divider
+  d3.select("#draghandle-horiz").on("mousedown", initResizeY);//add event to treemap-legend divider
   d3.select("#go-home").on("click", goHome);//add event to home button
   d3.select("#export").on("click", exportData);//add event to export button
   
@@ -403,8 +407,11 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
 //*******************************************************************************************
   //function to qc configuration settings above against the csv file
   function qcConfigurationData(data) {
+    QCdata = data.slice();
+    console.log ("QC data:");
+    console.log(QCdata);
     let columns = Object.keys(data[0]); //get names of csv columns
-    if (typeof treemapName == 'undefined') {
+    if (typeof treemapName == "undefined") {
       var treeMapName = CSVfileName.split(".")[0];
     }
     let groupingOrderSetNames = Object.keys(groupingOrderSet); 
@@ -460,7 +467,7 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
       let isANumberColumn = true;
 	  let dataRows = data.length
       for (let i = 0; i < dataRows; i++){ //step through each row
-	    let cellData = data[i][columnName].replace(/[^\x20-\x7E]/g, '').trim();//clean and trim data (remove non-printable characters)
+	    let cellData = data[i][columnName].replace(/[^\x20-\x7E]/g, "").trim();//clean and trim data (remove non-printable characters)
         data[i][columnName] = cellData;
 		if (columnName == timeFrameStartColumn || columnName == timeFrameEndColumn){
 		  cellData = reformatDateString(cellData);
@@ -574,7 +581,7 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
       list = [{"parentId": null, "id": startingId, "name": treemapName }];
 	  gPtr = 0;
     }else{
-      startingId = data[0][groupingOrder[0]].replace(/[().\s]/g,''); //remove any spaces in grouping order name (id's can have spaces in them)
+      startingId = data[0][groupingOrder[0]].replace(/[().\s]/g,""); //remove any spaces in grouping order name (id's can have spaces in them)
       list = [{"parentId": null, "id": startingId, "name": data[0][groupingOrder[0]] }]; //root node if first group has only 1 value
 	  gPtr = 1;
     }
@@ -588,7 +595,7 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
           parentId = id;
 	      name = item[groupingOrder[j]];
 	      id = name + "-" + parentId;
-		  id = id.replace(/[().\s]/g,'');
+		  id = id.replace(/[().\s]/g,"");
 	      list.push({ "parentId": parentId, "id": id, "name": name});
         }
 	  }
@@ -754,7 +761,7 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
 //*******************************************************************************************
 //functions to build filter menu elements
   function buildFilterMenu(groupingOrder){
-    let filterMenu = document.getElementById('filters');
+    let filterMenu = document.getElementById("filters");
 	filterMenu.innerHTML = '<div class="sticky" >'+buildSearchBox(groupingOrder)+'<span id="reset-filters" onclick = "resetFilters()" >Reset filter(s)</span>';
 	if (timeFrameStartColumn != ""){
 	  filterMenu.innerHTML += buildTimeFrameSlider();
@@ -870,33 +877,33 @@ d3.csv(CSVfileName).then(function(data){ //name of csv file to use
 //END OF MAIN FUNCTION
 //}).catch(function(error){
 //    alert("Error - Check configuration settings");
-});
+};
 //*******************************************************************************************
 //GLOBAL FUNCTIONS
 //*******************************************************************************************
 //functions to create and manage the filter menu
 function toggleVisibility(element) {//functions to toggle display of filter picklists
   let items = element.parentElement.getElementsByTagName("ul")[0];
-  if (items.classList.contains('visible')){
-    items.classList.remove('visible');
+  if (items.classList.contains("visible")){
+    items.classList.remove("visible");
     items.style.display = "none";
   } else {
-    items.classList.add('visible');
+    items.classList.add("visible");
     items.style.display = "block";
   }
 }
 function filterTreeMap(element){//function to filter treemap using filters list after any checkbox change   
-  let checkboxValue = {"key": element.value.split('<>')[0], "value": element.value.split('<>')[1]};
+  let checkboxValue = {"key": element.value.split("<>")[0], "value": element.value.split("<>")[1]};
   updateFilters(checkboxValue);
   applyFilters();
 }
 function applyFilters(){//function to apply filters to treemap leaf nodes
   let allLeaves = d3.selectAll(".node").filter(d => !d.children);
-  allLeaves.select('rect').style("visibility", "hidden"); //hide all leaf node rectangles
-  allLeaves.select('text').style("visibility", "hidden");  //hide all leaf node text
+  allLeaves.select("rect").style("visibility", "hidden"); //hide all leaf node rectangles
+  allLeaves.select("text").style("visibility", "hidden");  //hide all leaf node text
   let filteredLeaves = allLeaves.filter(d => filterLeaf(d));
-  filteredLeaves.select('rect').style("visibility", "visible");
-  filteredLeaves.select('text').style("visibility", "visible");
+  filteredLeaves.select("rect").style("visibility", "visible");
+  filteredLeaves.select("text").style("visibility", "visible");
 }
 function updateFilters(item){//function to update filters list based on any change to filter menu
   let currentFilterProperties = Object.keys(filters);
@@ -906,18 +913,18 @@ function updateFilters(item){//function to update filters list based on any chan
         filters[item.key].splice(filters[item.key].indexOf(item.value),1);
         if (filters[item.key].length == 0){
           delete filters[item.key]; //remove key if no values
-		  document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "No Filter"
+		  document.getElementById(item.key + "-checklist").getElementsByTagName("span")[0].innerText = "No Filter"
         } 		
       }else{ //value not included but key exists
         filters[item.key].push(item.value); //add value
       }
     }else{ //key does not yet exist
       filters[item.key] = [item.value]; //add first value
-	  document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "Filter Applied"
+	  document.getElementById(item.key + "-checklist").getElementsByTagName("span")[0].innerText = "Filter Applied"
     }
   }else{
     filters[item.key] = [item.value]; //Add first item to filters
-	document.getElementById(item.key + "-checklist").getElementsByTagName('span')[0].innerText = "Filter Applied"
+	document.getElementById(item.key + "-checklist").getElementsByTagName("span")[0].innerText = "Filter Applied"
   }
 }
 function filterLeaf(leaf) {//function to assess (T/F) whether a leaf node matches all filter list properties
@@ -955,7 +962,7 @@ function resetFilters(){//function to reset all filters
   delete filters["timeFrame"];
   let appliedFilters = Object.keys(filters);
   for (let af in appliedFilters){//clear all filter dropdowns and checkboxes
-    let dropDown = document.getElementById(appliedFilters[af]+"-checklist").getElementsByTagName('span')[0];
+    let dropDown = document.getElementById(appliedFilters[af]+"-checklist").getElementsByTagName("span")[0];
 	toggleVisibility(dropDown);
 	dropDown.innerText = "No Filter";
     let checkBoxList = document.getElementById(appliedFilters[af]+"-items").getElementsByTagName("input");
@@ -964,8 +971,8 @@ function resetFilters(){//function to reset all filters
     }	  
   }
   filters = {};
-  d3.selectAll(".node").filter(d => !d.children).select('rect').style("visibility", "visible"); //unhide leaf node rectangle
-  d3.selectAll(".node").filter(d => !d.children).select('text').style("visibility", "visible");  //unhide leaf node text
+  d3.selectAll(".node").filter(d => !d.children).select("rect").style("visibility", "visible"); //unhide leaf node rectangle
+  d3.selectAll(".node").filter(d => !d.children).select("text").style("visibility", "visible");  //unhide leaf node text
   if (timeFrameStartColumn != ""){
     document.getElementById("timeFrameCheckbox").checked = false; //clear time frame filter
     document.getElementById("sliderValue").innerText = "No filter";
@@ -1020,7 +1027,7 @@ function searchNodes() {
         }
         return false;
 	  });
-      leafNodeMatches.select('rect').attr("fill", "#ffff00");
+      leafNodeMatches.select("rect").attr("fill", "#ffff00");
     }else{
       updateLeafNodeColors();
 	}
@@ -1064,19 +1071,25 @@ function createNodeColorLegend() {
   let domString = "";
   if (colorProperty != "Default color"){
     let pv = uniqueValues[colorProperty];
-    //let colorSet = d3.schemePastel1;
     let colorSet = ["#92c7ed", "#ffbb80", "#9be49b", "#eb9393", "#d9cae8", "#dbc2bd", "#f6d5ec", "#e6e6e6", 
 	  "#f7f7d4", "#e8fafc", "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
-	if (leafNodeSizeValueColumns.includes(colorProperty)){
-	  colorSet = d3.schemeRdYlGn[pv.length]; //use a heatmap range of red-yellow-green for numerical values
+	if (leafNodeSizeValueColumns.includes(colorProperty)){//use a heatmap range of red-yellow-green for numerical values
+	  if (pv.length >= 3) {
+        colorSet = d3.schemeRdYlGn[pv.length];//D3 scheme only supports >3 values
+	  } else if (pv.length == 2) {
+	    colorSet = ["#d62728", "#2ca02c"]; //red, green
+	  } else {
+	    colorSet = ["#9be49b"];//green
+	  }
 	}
     for (let i = 0; i < pv.length; i++){
-      if (pv[i] != ""){
-        domString += '<li><input type="color" id="'+pv[i]+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pv[i]+'">'+ truncate(pv[i]) + '</label></li>';
+	  pvString = pv[i].toString();
+      if (pvString != ""){
+        domString += '<li><input type="color" id="'+pvString+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pvString+'">'+ truncate(pvString) + '</label></li>';
 	  }else{
-	    domString += '<li><input type="color" id="'+pv[i]+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pv[i]+'">(Blanks)</label></li>';
+	    domString += '<li><input type="color" id="'+pvString+'" value="'+colorSet[i]+'" onchange="changeLeafNodeColor(this)" /><label for="'+pvString+'">(Blanks)</label></li>';
 	  }
-	  leafNodeColor[pv[i]] = colorSet[i]; //build leafNodeColor array used to color each leaf node
+	  leafNodeColor[pvString] = colorSet[i]; //build leafNodeColor array used to color each leaf node
 	}
 	document.getElementById("treemap-legend-leafnode-label").innerHTML = "Leaf Nodes ("+nodeLabel+": "+colorProperty+")";
 	document.getElementById("treemap-legend-leafnode-list").innerHTML = domString;
@@ -1150,33 +1163,33 @@ function dragElement(elmnt) {
 //*******************************************************************************************
 //functions to adjust width of filters menu
 function initResizeX(e) {
-  window.addEventListener('mousemove', resizeX, false);
-  window.addEventListener('mouseup', stopResizeX, false);
+  window.addEventListener("mousemove", resizeX, false);
+  window.addEventListener("mouseup", stopResizeX, false);
 }
 function resizeX(e) {
   let mouseLocationX = e.clientX;
-  let filterWidth = 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth + '%';
-  let chartWidth = (100 - 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth) + '%';  
+  let filterWidth = 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth + "%";
+  let chartWidth = (100 - 100*(mouseLocationX - 5)/document.getElementById("container").offsetWidth) + "%";  
   document.getElementById("filters").style.width = filterWidth;
   document.getElementById("chart").style.width = chartWidth;
 }
 function stopResizeX(e) {
-  window.removeEventListener('mousemove', resizeX, false);
-  window.removeEventListener('mouseup', stopResizeX, false);
+  window.removeEventListener("mousemove", resizeX, false);
+  window.removeEventListener("mouseup", stopResizeX, false);
 }
 function initResizeY(e) {
-  window.addEventListener('mousemove', resizeY, false);
-  window.addEventListener('mouseup', stopResizeY, false);
+  window.addEventListener("mousemove", resizeY, false);
+  window.addEventListener("mouseup", stopResizeY, false);
 }
 function resizeY(e) {
   let mouseLocationY = e.clientY;
-  let chartHeight = 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight + '%';  
-  let legendHeight = (100 - 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight) + '%';
+  let chartHeight = 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight + "%";  
+  let legendHeight = (100 - 100*(mouseLocationY - 30)/document.getElementById("container").offsetHeight) + "%";
   document.getElementById("treemap").style.height = chartHeight;
 }
 function stopResizeY(e) {
-  window.removeEventListener('mousemove', resizeY, false);
-  window.removeEventListener('mouseup', stopResizeY, false);
+  window.removeEventListener("mousemove", resizeY, false);
+  window.removeEventListener("mouseup", stopResizeY, false);
 }
 //*******************************************************************************************
 //functions to export data about the visible leaf nodes
@@ -1196,10 +1209,10 @@ function exportData() {
   download(fileName, exportString);  
 }
 function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-    element.style.display = 'none';
+    var element = document.createElement("a");
+    element.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute("download", filename);
+    element.style.display = "none";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
@@ -1265,7 +1278,7 @@ function setColorScheme(groupingOrder) {
 //*******************************************************************************************
 function truncate(input) {
    if (input.length > 25)
-      return input.substring(0,22) + '...';
+      return input.substring(0,22) + "...";
    else
       return input;
 };
@@ -1275,7 +1288,7 @@ function reformatDateString(s) {
     return s
   }
 //  let b = s.split('/').reverse();
-  let b = s.split(" ")[0].split('/').reverse();
+  let b = s.split(" ")[0].split("/").reverse();
   if (b.length == 3){
     return b[0].padStart(4,"20") + "-" + b[1].padStart(2, "0") + "-" + b[1].padStart(2, "0");
   } else if (b.length == 2){
@@ -1284,6 +1297,52 @@ function reformatDateString(s) {
     return b[0].padStart(4,"20")
   }
 }
+//*******************************************************************************************
+//functions to retrieve data from Tableau server rather than local CSV file
+function getTableauData(url){
+  var containerDiv = document.getElementById("hiddenVizContainer");
+  var options = {
+    hideTabs: true,
+    hideToolbar: true,
+    onFirstInteractive: function () {formatTableauData(viz);}
+  };
+  console.log("Getting Viz");
+  var viz = new tableau.Viz(containerDiv, url, options);
+//  return data;
+}
+
+function formatTableauData(viz) {
+  var table, columns;
+  var row = {};
+  var data = [];
+  var sheet = viz.getWorkbook().getActiveSheet();
+  //If the active sheet is a dashboard, then you can just enter:
+  //sheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("name of worksheet");
+  var options = {
+    maxRows: 0, // Max rows to return. Use 0 to return all rows
+    ignoreAliases: false,
+    ignoreSelection: true,
+    includeAllColumns: false
+  };
+  console.log("Getting Sheet");
+  sheet.getUnderlyingDataAsync(options)
+    .then(function(t){
+      console.log("Formatting data");
+      columns = t.getColumns();
+      table = t.getData();
+      let numRows = table.length;
+      let numCols = columns.length;
+      for (let i = 0; i < numRows; i++){
+        row = {};
+        for (let j = 0; j < numCols; j++){
+    	  row[columns[j].getFieldName()] = table[i][j]["value"];
+        }
+        data.push(row);  
+      }
+	  buildTreemap(data)
+    })
+}
+
 </script>  
 </body>
 </html>
