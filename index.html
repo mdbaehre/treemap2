@@ -332,7 +332,7 @@ input[type=range]::-moz-range-track {
 
 //************************************************************************************************************************//
 // CUSTOM SETTINGS FOR DATA (First 7 vars are mandatory)
-var CSVfileName = "CNCFLandscape.csv";  //the name of csv file (including its path relative to the location of the html file)
+//var CSVfileName = "CNCFLandscape.csv";  //the name of csv file (including its path relative to the location of the html file)
 var url = "https://public.tableau.com/views/TreemapfromGithub/TreemapData";
 var dateOfData = "1 May 2020"; //date of the data contained in the CSV file
 var treemapName = "CNCF Treemap"; //the name in the browser tab and also the top level of treemap (if 1st group has more than 1 unique value)
@@ -342,7 +342,7 @@ var groupingOrderSet = {  //the order in which each row of data is grouped
     "License-Product": ["License", "Name"]
     };
 var nodeLabel = "Name"; //the name of the column used to label the leaf node
-var leafNodeSizeValueColumns = ["value"]; //the column name in the CSV file that holds numerical values used to determine the leaf node size
+var leafNodeSizeValueColumns = []; //the column name in the CSV file that holds numerical values used to determine the leaf node size
 var multiValueColumns = []; //the columns that have multiple values in a cell separated by the delimiter(below)
 var omitFromFilterColumns = [];//the columns to omit from the filter menu - usually because the text is too long or too many values
 var delimiter = ":"; //the delimiter between multiple values in a cell
